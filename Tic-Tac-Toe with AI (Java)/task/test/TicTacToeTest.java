@@ -3,84 +3,229 @@ import org.hyperskill.hstest.stage.StageTest;
 import org.hyperskill.hstest.testcase.CheckResult;
 import org.hyperskill.hstest.testing.TestedProgram;
 
-
-class Test {
-    String input;
-    String result;
-    String state;
-    String additionalContains;
-
-    Test(String input, String result, String state) {
-        this(input, result, state, null);
-    }
-
-    Test(String input, String result, String state, String additionalContains) {
-        this.input = input;
-        this.result = result;
-        this.state = state;
-        this.additionalContains = additionalContains;
-    }
-}
+import java.util.List;
 
 
 public class TicTacToeTest extends StageTest<String> {
 
-    Test[] tests = {
-        new Test("_XXOO_OX_\n1 1", "XXXOO_OX_", "X wins"),
-        new Test("_XXOO_OX_\n1 3\n1 1", "XXXOO_OX_", "X wins", "This cell is occupied! Choose another one!"),
-        new Test("_XXOO_OX_\n1 4\n1 1", "XXXOO_OX_", "X wins", "Coordinates should be from 1 to 3!"),
-        new Test("_XXOO_OX_\none\n1 1", "XXXOO_OX_", "X wins", "You should enter numbers!"),
-        new Test("_XXOO_OX_\none three\n1 1", "XXXOO_OX_", "X wins", "You should enter numbers!"),
-        new Test("_XXOO_OX_\n2 3", "_XXOOXOX_", "Game not finished"),
-        new Test("_XXOO_OX_\n3 3", "_XXOO_OXX", "Game not finished"),
-        new Test("XX_XOXOO_\n1 3", "XXOXOXOO_", "O wins"),
-        new Test("XX_XOXOO_\n3 3", "XX_XOXOOO", "O wins"),
-        new Test("_XO_OX___\n1 1", "XXO_OX___", "Game not finished"),
-        new Test("_XO_OX___\n2 1", "_XOXOX___", "Game not finished"),
-        new Test("_XO_OX___\n3 1", "_XO_OXX__", "Game not finished"),
-        new Test("_XO_OX___\n3 2", "_XO_OX_X_", "Game not finished"),
-        new Test("_XO_OX___\n3 3", "_XO_OX__X", "Game not finished"),
-        new Test("_XO_OX__X\n1 1", "OXO_OX__X", "Game not finished"),
-        new Test("_XO_OX__X\n2 1", "_XOOOX__X", "Game not finished"),
-        new Test("_XO_OX__X\n3 1", "_XO_OXO_X", "O wins"),
-        new Test("_XO_OX__X\n3 2", "_XO_OX_OX", "Game not finished"),
-        new Test("XO_OXOX__\n1 3", "XOXOXOX__", "X wins"),
-        new Test("XO_OXOX__\n3 2", "XO_OXOXX_", "Game not finished"),
-        new Test("XO_OXOX__\n3 3", "XO_OXOX_X", "X wins"),
-    };
+    int[] easyAiMoves = new int[9];
 
-
-    @DynamicTest(data = "tests")
-    CheckResult testGridOutput(Test testCase) {
+    @DynamicTest(order = 0)
+    CheckResult testBadParameters() {
 
         TestedProgram program = new TestedProgram();
         program.start();
 
-        String output = program.execute(testCase.input);
-
-        Grid grid = Grid.fromLine(testCase.input.split("\n")[0]);
-        Grid outputGrid = Grid.fromOutput(output, 1);
-
-        if (!grid.equals(outputGrid)) {
-            return CheckResult.wrong("The printed grid is not equal to the input grid!\n" +
-                "Correct grid:\n\n" + grid);
+        String output = program.execute("start");
+        if (!output.toLowerCase().contains("bad parameters")) {
+            return CheckResult.wrong("After entering start command with wrong parameters you should print 'Bad parameters!' and ask to enter a command again!");
         }
 
-        if (testCase.additionalContains != null && !output.contains(testCase.additionalContains)) {
-            return CheckResult.wrong("\"" + testCase.additionalContains + "\" expected in the output!");
+        output = program.execute("start easy");
+        if (!output.toLowerCase().contains("bad parameters")) {
+            return CheckResult.wrong("After entering start command with wrong parameters you should print 'Bad parameters!' and ask to enter a command again!");
         }
 
-        Grid resultGrid = Grid.fromOutput(output, 2);
-        Grid correctResultGrid = Grid.fromLine(testCase.result);
+        program.execute("exit");
 
-        if (!resultGrid.equals(correctResultGrid)) {
-            return CheckResult.wrong("The printed result grid is not correct!\n" +
-                "Correct result grid:\n\n" + correctResultGrid);
+        if (!program.isFinished()) {
+            return CheckResult.wrong("After entering 'exit' command you should stop the program!");
         }
 
-        if (!output.contains(testCase.state)) {
-            return CheckResult.wrong("The game result is wrong. Expected result \"" + testCase.state + "\".");
+        return CheckResult.correct();
+    }
+
+
+    @DynamicTest(order = 1)
+    CheckResult testGridOutput() {
+
+        TestedProgram program = new TestedProgram();
+
+        program.start();
+
+        String output = program.execute("start user easy");
+
+        Grid printedGrid = Grid.fromOutput(output);
+        Grid emptyGrid = Grid.fromLine("_________");
+
+        if (!printedGrid.equals(emptyGrid)) {
+            return CheckResult.wrong("After starting the program you should print an empty grid!\n" +
+                "Correct empty grid:\n" + emptyGrid);
         }
+
+        if (!output.toLowerCase().contains("enter the coordinates:")) {
+            return CheckResult.wrong("After printing an empty grid you should ask to enter cell coordinates!");
+        }
+
+        output = program.execute("2 2");
+
+        Grid gridAfterMove = Grid.fromOutput(output);
+        Grid correctGridAfterMove = Grid.fromLine("____X____");
+
+        if (!gridAfterMove.equals(correctGridAfterMove)) {
+            return CheckResult.wrong("After making the move wrong grid was printed.\n" +
+                "Your grid:\n" + gridAfterMove + "\n" +
+                "Correct grid:\n" + correctGridAfterMove);
+        }
+
+        if (!output.toLowerCase().replace("'", "\"").contains("making move level \"easy\"")) {
+            return CheckResult.wrong("After entering a cell coordinates you should print:\nMaking move level \"easy\"");
+        }
+
+        Grid gridAfterAiMove = Grid.fromOutput(output, 2);
+
+        if (gridAfterAiMove.equals(gridAfterMove)) {
+            return CheckResult.wrong("After AI move grid wasn't changed!");
+        }
+
+        Grid gameGrid = gridAfterAiMove;
+
+        while (true) {
+            if (gameGrid.getGameState() != GameState.NOT_FINISHED) {
+                switch (gameGrid.getGameState()) {
+                    case X_WIN:
+                        if (!output.contains("X wins")) {
+                            return CheckResult.wrong("You should print 'X wins' if X win the game");
+                        }
+                        break;
+                    case O_WIN:
+                        if (!output.contains("O wins")) {
+                            return CheckResult.wrong("You should print 'O wins' if O win the game");
+                        }
+                        break;
+                    case DRAW:
+                        if (!output.contains("Draw")) {
+                            return CheckResult.wrong("You should print 'Draw' if the game ends with draw!");
+                        }
+                        break;
+                }
+                break;
+            }
+            Position nextMove = Minimax.getMove(gameGrid, CellState.X);
+
+            Grid tempGrid = gameGrid.copy();
+            tempGrid.setCell(nextMove.x, nextMove.y, CellState.X);
+
+            output = program.execute((nextMove.x + 1) + " " + (nextMove.y + 1));
+
+            gameGrid = Grid.fromOutput(output);
+
+            if (!gameGrid.equals(tempGrid)) {
+                return CheckResult.wrong("After making move (" + nextMove + ") the game grid is wrong!\n" +
+                    "Your gird\n" + gameGrid + "\n" +
+                    "Correct grid\n" + tempGrid);
+            }
+
+            if (gameGrid.getGameState() != GameState.NOT_FINISHED)
+                continue;
+
+            gameGrid = Grid.fromOutput(output, 2);
+        }
+
+        return CheckResult.correct();
+    }
+
+    @DynamicTest(repeat = 100, order = 2)
+    CheckResult checkEasyAi() {
+        TestedProgram program = new TestedProgram();
+        program.start();
+
+        program.execute("start user easy");
+
+        String output = program.execute("2 2");
+
+        Grid gridAfterAiMove = Grid.fromOutput(output, 2);
+
+        CellState[][] array = gridAfterAiMove.getGrid();
+
+        for (int i = 0; i < 9; i++) {
+            if (i == 4) {
+                continue;
+            }
+            if (array[i / 3][i % 3] == CellState.O) {
+                easyAiMoves[i]++;
+            }
+        }
+
+        return CheckResult.correct();
+    }
+
+    @DynamicTest(order = 3)
+    CheckResult checkRandom() {
+        double averageScore = 0;
+
+        for (int i = 0; i < easyAiMoves.length; i++) {
+            averageScore += (i + 1) * easyAiMoves[i];
+        }
+
+        averageScore /= 8;
+
+        double expectedValue = (double) (1 + 2 + 3 + 4 + 6 + 7 + 8 + 9) * 100 / 8 / 8;
+
+        if (Math.abs(averageScore - expectedValue) > 20) {
+            return CheckResult.wrong("Looks like your Easy level AI doesn't make a random move!");
+        }
+
+        return CheckResult.correct();
+    }
+
+    boolean isEasyNotMovingLikeMedium = false;
+
+    @DynamicTest(repeat = 30, order = 4)
+    CheckResult checkEasyNotMovingLikeMedium() {
+
+        if (isEasyNotMovingLikeMedium) {
+            return CheckResult.correct();
+        }
+
+        TestedProgram program = new TestedProgram();
+        program.start();
+        program.execute("start user easy");
+
+        String output = program.execute("2 2");
+
+        Grid gameGrid = Grid.fromOutput(output, 2);
+
+        CellState[][] cellStates = gameGrid.getGrid();
+
+        if (cellStates[0][0] == CellState.EMPTY && cellStates[2][2] == CellState.EMPTY) {
+            output = program.execute("1 1");
+            gameGrid = Grid.fromOutput(output, 2);
+            if (gameGrid.getGrid()[2][2] == CellState.EMPTY) {
+                isEasyNotMovingLikeMedium = true;
+            }
+        } else {
+            output = program.execute("1 3");
+            gameGrid = Grid.fromOutput(output, 2);
+            if (gameGrid.getGrid()[2][0] == CellState.EMPTY) {
+                isEasyNotMovingLikeMedium = true;
+            }
+        }
+
+        program.stop();
+        return CheckResult.correct();
+    }
+
+    @DynamicTest(order = 5)
+    CheckResult checkEasyNotMovingLikeMediumAfter() {
+        if (!isEasyNotMovingLikeMedium) {
+            return CheckResult.wrong("Looks like your Easy level AI doesn't make a random move!");
+        }
+        return CheckResult.correct();
+    }
+
+
+    @DynamicTest(order = 6)
+    CheckResult checkEasyVsEasy() {
+
+        TestedProgram program = new TestedProgram();
+        program.start();
+
+        String output = program.execute("start easy easy");
+
+        List<Grid> gridList = Grid.allGridsFromOutput(output);
+
+        Grid.checkGridSequence(gridList);
 
         return CheckResult.correct();
     }
