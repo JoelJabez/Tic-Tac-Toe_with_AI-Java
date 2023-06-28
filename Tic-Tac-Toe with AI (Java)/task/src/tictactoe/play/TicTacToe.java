@@ -1,6 +1,5 @@
 package tictactoe.play;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -9,7 +8,6 @@ public class TicTacToe {
 
 	public static void start() {
 		Scanner scanner = new Scanner(System.in);
-		Random random = new Random();
 
 		while (true) {
 			System.out.print("Input command: ");
@@ -21,18 +19,31 @@ public class TicTacToe {
 					try {
 						String mode = input.split(" ")[1];
 						String against = input.split(" ")[2];
+						Mode levelOfDifficulty;
 						switch (mode) {
 							case "easy" -> {
 								switch (against) {
-									case "easy" -> EasyMode.battleAgainst("computer", "computer");
-									case "user" -> EasyMode.battleAgainst("computer", "user");
+									case "easy" -> {
+										levelOfDifficulty = new EasyMode("computer", "computer");
+										levelOfDifficulty.battleAgainst();
+									}
+									case "user" -> {
+										levelOfDifficulty = new EasyMode("computer", "user");
+										levelOfDifficulty.battleAgainst();
+									}
 								}
 							}
 
 							case "user" -> {
 								switch (against) {
-									case "easy" -> EasyMode.battleAgainst("user", "computer");
-									case "user" -> EasyMode.battleAgainst("user", "user");
+									case "easy" -> {
+										levelOfDifficulty = new EasyMode("user", "computer");
+										levelOfDifficulty.battleAgainst();
+									}
+									case "user" -> {
+										levelOfDifficulty = new Mode("user", "user");
+										levelOfDifficulty.battleAgainst();
+									}
 								}
 							}
 						}
