@@ -247,7 +247,7 @@ files:
         }
     }
   learner_created: false
-- name: src/tictactoe/TicTacToe.java
+- name: src/tictactoe/play/TicTacToe.java
   visible: true
   text: "package tictactoe;\n\nimport java.util.Arrays;\nimport java.util.Random;\n\
     import java.util.Scanner;\n\npublic class TicTacToe {\n\tpublic static void start()\
@@ -300,6 +300,18 @@ files:
     \t\t}\n\n\t\tif (counter == 9) {\n\t\t\tSystem.out.println(\"Draw\");\n\t\t\t\
     return true;\n\t\t}\n\n\t\treturn false;\n\t}\n}\n"
   learner_created: true
+- name: src/tictactoe/play/GameStatus.java
+  visible: true
+  learner_created: true
+- name: src/tictactoe/play/EasyMode.java
+  visible: true
+  learner_created: true
+- name: src/tictactoe/play/Mode.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7436#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Tue, 27 Jun 2023 07:07:00 UTC"
+record: 3
