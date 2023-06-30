@@ -444,5 +444,8 @@ files:
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7437#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 30 Jun 2023 06:11:55 UTC"
 record: 4
