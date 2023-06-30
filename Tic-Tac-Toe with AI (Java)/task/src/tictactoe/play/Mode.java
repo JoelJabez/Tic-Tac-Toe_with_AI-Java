@@ -4,17 +4,15 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-import static tictactoe.play.GameStatus.isGameOver;
-import static tictactoe.play.GameStatus.turn;
-
 class Mode {
 
-	static Scanner scanner = new Scanner(System.in);
-	static Random random = new Random();
-	static char[][] ticTacToeTable = new char[3][3];
+	Random random = new Random();
+	char[][] ticTacToeTable = new char[3][3];
 
-	private String player1;
-	private String player2;
+	private String player1 = "";
+	private String player2 = "";
+
+	Mode() {}
 
 	Mode(String player1, String player2) {
 		this.player1 = player1;
@@ -29,13 +27,16 @@ class Mode {
 		return player2;
 	}
 
-	static void createEmptyBoard() {
+	void createEmptyBoard() {
 		for (char[] chars: ticTacToeTable) {
 			Arrays.fill(chars, ' ');
 		}
 	}
 
 	void userInput() {
+		Scanner scanner = new Scanner(System.in);
+		GameStatus gameStatus = new GameStatus();
+
 		int yCoordinate;
 		int xCoordinate;
 		while (true) {
@@ -49,10 +50,10 @@ class Mode {
 					xCoordinate -= 1;
 					yCoordinate -= 1;
 
-					if (isOccupied(ticTacToeTable, yCoordinate, xCoordinate)) {
+					if (isOccupied(ticTacToeTable, xCoordinate, yCoordinate)) {
 						System.out.println("This cell is occupied! Choose another one!");
 					} else {
-						ticTacToeTable[xCoordinate][yCoordinate] = turn() ? 'X': 'O';
+						ticTacToeTable[xCoordinate][yCoordinate] = gameStatus.turn() ? 'X': 'O';
 						printTable(ticTacToeTable);
 						break;
 					}
@@ -71,14 +72,15 @@ class Mode {
 	void computerInput() {}
 
 	void battleAgainst() {
+		GameStatus gameStatus = new GameStatus();
 		createEmptyBoard();
 		printTable(ticTacToeTable);
 		do {
 			userInput();
-		} while(!isGameOver(ticTacToeTable));
+		} while(!gameStatus.isGameOver(ticTacToeTable));
 	}
 
-	static boolean isOccupied(char[][] ticTacToe, int yCoordinate, int xCoordinate) {
+	boolean isOccupied(char[][] ticTacToe, int xCoordinate, int yCoordinate) {
 		return ticTacToe[xCoordinate][yCoordinate] != ' ';
 	}
 

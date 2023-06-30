@@ -33,18 +33,18 @@
 
 ---------
 
-| O     |
+|     O |
 
 |   X   |
 
 |       |
 
 ---------
-Enter the coordinates: > 1 2
+Enter the coordinates: > 1 1
 
 ---------
 
-| O X   |
+| X   O |
 
 |   X   |
 
@@ -55,22 +55,22 @@
 
 ---------
 
-| O X   |
+| X   O |
 
 |   X   |
 
-|     O |
+| O     |
 
 ---------
-Enter the coordinates: > 3 2
+Enter the coordinates: > 3 3
 
 ---------
 
-| O X   |
+| X   O |
 
 |   X   |
 
-|   X O |
+| O   X |
 
 ---------
 X wins
@@ -107,7 +107,7 @@
 
 |   X   |
 
-|   O   |
+|     O |
 
 ---------
 [1;31m
@@ -142,7 +142,7 @@
 
 |   X   |
 
-| O     |
+|   O   |
 
 ---------
 [1;31m
@@ -208,9 +208,9 @@
 
 ---------
 
-|       |
+| O     |
 
-|   X O |
+|   X   |
 
 |       |
 
@@ -243,11 +243,11 @@
 
 ---------
 
-| O     |
+|       |
 
 |   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
@@ -278,11 +278,11 @@
 
 ---------
 
-|       |
+| O     |
 
 |   X   |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -313,9 +313,9 @@
 
 ---------
 
-|     O |
+|       |
 
-|   X   |
+| O X   |
 
 |       |
 
@@ -348,11 +348,11 @@
 
 ---------
 
-|       |
+|     O |
 
 |   X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -383,11 +383,11 @@
 
 ---------
 
-|     O |
+|       |
 
 |   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
@@ -418,11 +418,11 @@
 
 ---------
 
-|       |
+| O     |
 
 |   X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -453,11 +453,11 @@
 
 ---------
 
-|       |
+|   O   |
 
 |   X   |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -490,9 +490,9 @@
 
 |       |
 
-|   X   |
+| O X   |
 
-| O     |
+|       |
 
 ---------
 [1;31m
@@ -525,7 +525,7 @@
 
 |       |
 
-|   X O |
+| O X   |
 
 |       |
 
@@ -558,7 +558,7 @@
 
 ---------
 
-|   O   |
+|     O |
 
 |   X   |
 
@@ -593,9 +593,9 @@
 
 ---------
 
-|     O |
+|       |
 
-|   X   |
+| O X   |
 
 |       |
 
@@ -628,11 +628,11 @@
 
 ---------
 
-|       |
+| O     |
 
 |   X   |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -698,9 +698,9 @@
 
 ---------
 
-|     O |
+|       |
 
-|   X   |
+| O X   |
 
 |       |
 
@@ -768,11 +768,11 @@
 
 ---------
 
-|       |
+|     O |
 
 |   X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -803,155 +803,15 @@
 
 ---------
 
-|   O   |
+|       |
 
 |   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
 Start test 24[0m
-!Input command: > start user easy
-
----------
-
-|       |
-
-|       |
-
-|       |
-
----------
-Enter the coordinates: > 2 2
-
----------
-
-|       |
-
-|   X   |
-
-|       |
-
----------
-Making move level "easy"
-
----------
-
-|       |
-
-| O X   |
-
-|       |
-
----------
-[1;31m
-Start test 25[0m
-!Input command: > start user easy
-
----------
-
-|       |
-
-|       |
-
-|       |
-
----------
-Enter the coordinates: > 2 2
-
----------
-
-|       |
-
-|   X   |
-
-|       |
-
----------
-Making move level "easy"
-
----------
-
-|       |
-
-|   X   |
-
-|     O |
-
----------
-[1;31m
-Start test 26[0m
-!Input command: > start user easy
-
----------
-
-|       |
-
-|       |
-
-|       |
-
----------
-Enter the coordinates: > 2 2
-
----------
-
-|       |
-
-|   X   |
-
-|       |
-
----------
-Making move level "easy"
-
----------
-
-|     O |
-
-|   X   |
-
-|       |
-
----------
-[1;31m
-Start test 27[0m
-!Input command: > start user easy
-
----------
-
-|       |
-
-|       |
-
-|       |
-
----------
-Enter the coordinates: > 2 2
-
----------
-
-|       |
-
-|   X   |
-
-|       |
-
----------
-Making move level "easy"
-
----------
-
-|       |
-
-|   X   |
-
-|     O |
-
----------
-[1;31m
-Start test 28[0m
 !Input command: > start user easy
 
 ---------
@@ -986,7 +846,42 @@
 
 ---------
 [1;31m
-Start test 29[0m
+Start test 25[0m
+!Input command: > start user easy
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "easy"
+
+---------
+
+|     O |
+
+|   X   |
+
+|       |
+
+---------
+[1;31m
+Start test 26[0m
 !Input command: > start user easy
 
 ---------
@@ -1021,6 +916,111 @@
 
 ---------
 [1;31m
+Start test 27[0m
+!Input command: > start user easy
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "easy"
+
+---------
+
+| O     |
+
+|   X   |
+
+|       |
+
+---------
+[1;31m
+Start test 28[0m
+!Input command: > start user easy
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "easy"
+
+---------
+
+|   O   |
+
+|   X   |
+
+|       |
+
+---------
+[1;31m
+Start test 29[0m
+!Input command: > start user easy
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "easy"
+
+---------
+
+|   O   |
+
+|   X   |
+
+|       |
+
+---------
+[1;31m
 Start test 30[0m
 !Input command: > start user easy
 
@@ -1050,9 +1050,9 @@
 
 |       |
 
-|   X O |
+|   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -1083,7 +1083,7 @@
 
 ---------
 
-|     O |
+| O     |
 
 |   X   |
 
@@ -1120,9 +1120,9 @@
 
 |       |
 
-|   X O |
+|   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -1153,11 +1153,11 @@
 
 ---------
 
-|       |
+| O     |
 
 |   X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -1188,7 +1188,7 @@
 
 ---------
 
-|   O   |
+| O     |
 
 |   X   |
 
@@ -1223,9 +1223,9 @@
 
 ---------
 
-|       |
+|   O   |
 
-|   X O |
+|   X   |
 
 |       |
 
@@ -1295,9 +1295,9 @@
 
 |       |
 
-|   X O |
+|   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
@@ -1328,9 +1328,9 @@
 
 ---------
 
-|       |
+|     O |
 
-| O X   |
+|   X   |
 
 |       |
 
@@ -1365,9 +1365,9 @@
 
 |       |
 
-| O X   |
+|   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
@@ -1398,7 +1398,7 @@
 
 ---------
 
-| O     |
+|   O   |
 
 |   X   |
 
@@ -1435,9 +1435,9 @@
 
 |       |
 
-|   X   |
+| O X   |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -1468,11 +1468,11 @@
 
 ---------
 
-| O     |
+|       |
 
 |   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -1503,11 +1503,11 @@
 
 ---------
 
-|       |
+|     O |
 
 |   X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -1608,11 +1608,11 @@
 
 ---------
 
-|       |
+|   O   |
 
 |   X   |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -1643,11 +1643,11 @@
 
 ---------
 
-|   O   |
+|       |
 
 |   X   |
 
-|       |
+|   O   |
 
 ---------
 [1;31m
@@ -1682,11 +1682,81 @@
 
 |   X   |
 
-| O     |
+|   O   |
 
 ---------
 [1;31m
 Start test 49[0m
+!Input command: > start user easy
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "easy"
+
+---------
+
+|     O |
+
+|   X   |
+
+|       |
+
+---------
+[1;31m
+Start test 50[0m
+!Input command: > start user easy
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "easy"
+
+---------
+
+|     O |
+
+|   X   |
+
+|       |
+
+---------
+[1;31m
+Start test 51[0m
 !Input command: > start user easy
 
 ---------
@@ -1721,7 +1791,7 @@
 
 ---------
 [1;31m
-Start test 50[0m
+Start test 52[0m
 !Input command: > start user easy
 
 ---------
@@ -1756,76 +1826,6 @@
 
 ---------
 [1;31m
-Start test 51[0m
-!Input command: > start user easy
-
----------
-
-|       |
-
-|       |
-
-|       |
-
----------
-Enter the coordinates: > 2 2
-
----------
-
-|       |
-
-|   X   |
-
-|       |
-
----------
-Making move level "easy"
-
----------
-
-| O     |
-
-|   X   |
-
-|       |
-
----------
-[1;31m
-Start test 52[0m
-!Input command: > start user easy
-
----------
-
-|       |
-
-|       |
-
-|       |
-
----------
-Enter the coordinates: > 2 2
-
----------
-
-|       |
-
-|   X   |
-
-|       |
-
----------
-Making move level "easy"
-
----------
-
-| O     |
-
-|   X   |
-
-|       |
-
----------
-[1;31m
 Start test 53[0m
 !Input command: > start user easy
 
@@ -1855,9 +1855,9 @@
 
 |       |
 
-|   X   |
+|   X O |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -1923,11 +1923,11 @@
 
 ---------
 
-|       |
+|     O |
 
 |   X   |
 
-| O     |
+|       |
 
 ---------
 [1;31m
@@ -1960,9 +1960,9 @@
 
 |       |
 
-|   X   |
+|   X O |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -1995,9 +1995,9 @@
 
 |       |
 
-|   X   |
+| O X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -2028,11 +2028,11 @@
 
 ---------
 
-| O     |
+|       |
 
 |   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -2063,7 +2063,7 @@
 
 ---------
 
-|   O   |
+| O     |
 
 |   X   |
 
@@ -2100,9 +2100,9 @@
 
 |       |
 
-|   X   |
+| O X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -2133,11 +2133,11 @@
 
 ---------
 
-|       |
+|     O |
 
 |   X   |
 
-| O     |
+|       |
 
 ---------
 [1;31m
@@ -2203,11 +2203,11 @@
 
 ---------
 
-|   O   |
+|       |
 
 |   X   |
 
-|       |
+|   O   |
 
 ---------
 [1;31m
@@ -2238,11 +2238,11 @@
 
 ---------
 
-|       |
+|     O |
 
 |   X   |
 
-| O     |
+|       |
 
 ---------
 [1;31m
@@ -2273,7 +2273,7 @@
 
 ---------
 
-|     O |
+|   O   |
 
 |   X   |
 
@@ -2343,11 +2343,11 @@
 
 ---------
 
-|   O   |
+|       |
 
 |   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
@@ -2378,11 +2378,11 @@
 
 ---------
 
-|     O |
+|       |
 
 |   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -2415,9 +2415,9 @@
 
 |       |
 
-|   X   |
+|   X O |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -2448,11 +2448,11 @@
 
 ---------
 
-| O     |
+|       |
 
 |   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -2553,11 +2553,11 @@
 
 ---------
 
-|       |
+| O     |
 
 |   X   |
 
-| O     |
+|       |
 
 ---------
 [1;31m
@@ -2592,7 +2592,7 @@
 
 |   X   |
 
-| O     |
+|     O |
 
 ---------
 [1;31m
@@ -2623,11 +2623,11 @@
 
 ---------
 
-| O     |
+|       |
 
 |   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -2658,11 +2658,11 @@
 
 ---------
 
-|     O |
+|       |
 
 |   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -2693,11 +2693,11 @@
 
 ---------
 
-|   O   |
+|       |
 
 |   X   |
 
-|       |
+|   O   |
 
 ---------
 [1;31m
@@ -2730,7 +2730,7 @@
 
 |       |
 
-| O X   |
+|   X O |
 
 |       |
 
@@ -2798,9 +2798,9 @@
 
 ---------
 
-|       |
+| O     |
 
-| O X   |
+|   X   |
 
 |       |
 
@@ -2833,11 +2833,11 @@
 
 ---------
 
-|       |
+|   O   |
 
 |   X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -2868,9 +2868,9 @@
 
 ---------
 
-|     O |
+|       |
 
-|   X   |
+| O X   |
 
 |       |
 
@@ -2903,11 +2903,11 @@
 
 ---------
 
-| O     |
+|       |
 
 |   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
@@ -2942,7 +2942,7 @@
 
 |   X   |
 
-| O     |
+|     O |
 
 ---------
 [1;31m
@@ -2975,9 +2975,9 @@
 
 |       |
 
-|   X O |
+|   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
@@ -3008,11 +3008,11 @@
 
 ---------
 
-|     O |
+|       |
 
 |   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -3043,9 +3043,9 @@
 
 ---------
 
-|       |
+|     O |
 
-|   X O |
+|   X   |
 
 |       |
 
@@ -3078,9 +3078,9 @@
 
 ---------
 
-|   O   |
+|       |
 
-|   X   |
+| O X   |
 
 |       |
 
@@ -3113,11 +3113,11 @@
 
 ---------
 
-|   O   |
+|       |
 
 |   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -3150,9 +3150,9 @@
 
 |       |
 
-|   X O |
+|   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -3183,7 +3183,7 @@
 
 ---------
 
-|     O |
+| O     |
 
 |   X   |
 
@@ -3220,9 +3220,9 @@
 
 |       |
 
-| O X   |
+|   X   |
 
-|       |
+|   O   |
 
 ---------
 [1;31m
@@ -3253,7 +3253,7 @@
 
 ---------
 
-|     O |
+|   O   |
 
 |   X   |
 
@@ -3290,9 +3290,9 @@
 
 |       |
 
-|   X O |
+|   X   |
 
-|       |
+|     O |
 
 ---------
 [1;31m
@@ -3323,7 +3323,7 @@
 
 ---------
 
-| O     |
+|     O |
 
 |   X   |
 
@@ -3358,7 +3358,7 @@
 
 ---------
 
-|   O   |
+| O     |
 
 |   X   |
 
@@ -3393,11 +3393,11 @@
 
 ---------
 
-|       |
+| O     |
 
 |   X   |
 
-| O     |
+|       |
 
 ---------
 [1;31m
@@ -3428,9 +3428,9 @@
 
 ---------
 
-|       |
+|   O   |
 
-| O X   |
+|   X   |
 
 |       |
 
@@ -3463,11 +3463,11 @@
 
 ---------
 
-|       |
+| O     |
 
 |   X   |
 
-|   O   |
+|       |
 
 ---------
 [1;31m
@@ -3500,9 +3500,9 @@
 
 |       |
 
-|   X O |
+|   X   |
 
-|       |
+| O     |
 
 ---------
 [1;31m
@@ -3533,11 +3533,11 @@
 
 ---------
 
-|       |
+|     O |
 
 |   X   |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -3570,9 +3570,9 @@
 
 |       |
 
-|   X   |
+| O X   |
 
-|     O |
+|       |
 
 ---------
 [1;31m
@@ -3627,7 +3627,7 @@
 
 ---------
 
-| X O   |
+| X   O |
 
 |   X   |
 
@@ -3722,9 +3722,20 @@
 
 ---------
 
+|   O   |
+
 |       |
 
-|     O |
+|     X |
+
+---------
+Making move level "easy"
+
+---------
+
+|   O X |
+
+|       |
 
 |     X |
 
@@ -3733,67 +3744,1437 @@
 
 ---------
 
-|     X |
+| O O X |
 
-|     O |
-
-|     X |
-
----------
-Making move level "easy"
-
----------
+|       |
 
 |     X |
 
-|     O |
+---------
+Making move level "easy"
 
-|   O X |
+---------
+
+| O O X |
+
+|   X   |
+
+|     X |
 
 ---------
 Making move level "easy"
 
 ---------
 
-| X   X |
+| O O X |
 
-|     O |
+| O X   |
 
-|   O X |
-
----------
-Making move level "easy"
-
----------
-
-| X O X |
-
-|     O |
-
-|   O X |
+|     X |
 
 ---------
 Making move level "easy"
 
 ---------
 
-| X O X |
+| O O X |
 
-| X   O |
+| O X   |
 
-|   O X |
+|   X X |
 
 ---------
 Making move level "easy"
 
 ---------
 
-| X O X |
+| O O X |
 
-| X O O |
+| O X   |
 
-|   O X |
+| O X X |
 
 ---------
 O wins
 
+[1;31m
+Start test 136[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|       |
+
+|   X   |
+
+| O     |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X     |
+
+|   X   |
+
+| O     |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X     |
+
+|   X   |
+
+| O   O |
+
+---------
+[1;31m
+Start test 137[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|       |
+
+|   X   |
+
+| O     |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X     |
+
+|   X   |
+
+| O     |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X     |
+
+|   X   |
+
+| O   O |
+
+---------
+[1;31m
+Start test 138[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|       |
+
+| O X   |
+
+|       |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X     |
+
+| O X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X     |
+
+| O X   |
+
+|     O |
+
+---------
+[1;31m
+Start test 139[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|       |
+
+|   X   |
+
+|   O   |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X     |
+
+|   X   |
+
+|   O   |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X     |
+
+|   X   |
+
+|   O O |
+
+---------
+[1;31m
+Start test 140[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|   O   |
+
+|   X   |
+
+|       |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X O   |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X O   |
+
+|   X   |
+
+|     O |
+
+---------
+[1;31m
+Start test 141[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|     O |
+
+|   X   |
+
+|       |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X   O |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X   O |
+
+|   X   |
+
+|     O |
+
+---------
+[1;31m
+Start test 142[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|   O   |
+
+|   X   |
+
+|       |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X O   |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X O   |
+
+|   X   |
+
+|     O |
+
+---------
+[1;31m
+Start test 143[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|       |
+
+|   X O |
+
+|       |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X     |
+
+|   X O |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X     |
+
+|   X O |
+
+|     O |
+
+---------
+[1;31m
+Start test 144[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|       |
+
+|   X   |
+
+| O     |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X     |
+
+|   X   |
+
+| O     |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X     |
+
+|   X   |
+
+| O   O |
+
+---------
+[1;31m
+Start test 145[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|   O   |
+
+|   X   |
+
+|       |
+
+---------
+Enter the coordinates: > 1 1
+
+---------
+
+| X O   |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+true
+2 2
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+---------
+
+| X O   |
+
+|   X   |
+
+|     O |
+
+---------
+[1;31m
+Start test 146[0m
+%Input command: > start medium medium
+[1;31m
+Start test 147[0m
+%Input command: > start medium medium
+[1;31m
+Start test 148[0m
+%Input command: > start medium medium
+[1;31m
+Start test 149[0m
+%Input command: > start medium medium
+[1;31m
+Start test 150[0m
+%Input command: > start medium medium
+[1;31m
+Start test 151[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|     O |
+
+|   X   |
+
+|       |
+
+---------
+[1;31m
+Start test 152[0m
+#Input command: > start user medium
+
+---------
+
+|       |
+
+|       |
+
+|       |
+
+---------
+Enter the coordinates: > 2 2
+
+---------
+
+|       |
+
+|   X   |
+
+|       |
+
+---------
+Making move level "medium"
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+false
+2 0
+isHorizontal method
+
+isHorizontal method
+
+isHorizontal method
+
+
+isRightDiagonal method: 
+x coordinate: 0
+y coordinate: 2
+x counter: 0
+y counter: 0
+x coordinate: 0
+y coordinate: 0
+x counter: 1
+y counter: 0
+x coordinate: 2
+y coordinate: 0
+x counter: 1
+y counter: 0
+
+
+---------
+
+|       |
+
+|   X   |
+
+|   O   |
+
+---------
+[1;31m
+Start test 153[0m
+[1;31m
+Start test 154[0m
+[1;31m
+Start test 155[0m
+[1;31m
+Start test 156[0m
+[1;31m
+Start test 157[0m
+[1;31m
+Start test 158[0m
+[1;31m
+Start test 159[0m
+[1;31m
+Start test 160[0m
+[1;31m
+Start test 161[0m
+[1;31m
+Start test 162[0m
+[1;31m
+Start test 163[0m
+[1;31m
+Start test 164[0m
+[1;31m
+Start test 165[0m
+[1;31m
+Start test 166[0m
+[1;31m
+Start test 167[0m
+[1;31m
+Start test 168[0m
+[1;31m
+Start test 169[0m
+[1;31m
+Start test 170[0m
+[1;31m
+Start test 171[0m
+[1;31m
+Start test 172[0m
+[1;31m
+Start test 173[0m
+[1;31m
+Start test 174[0m
+[1;31m
+Start test 175[0m
+[1;31m
+Start test 176[0m
+[1;31m
+Start test 177[0m
+[1;31m
+Start test 178[0m
+[1;31m
+Start test 179[0m
+[1;31m
+Start test 180[0m
+[1;31m
+Start test 181[0m

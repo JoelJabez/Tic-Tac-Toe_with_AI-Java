@@ -374,6 +374,187 @@ files:
         }
     }
   learner_created: false
+- name: src/tictactoe/play/TicTacToe.java
+  visible: true
+  text: "package tictactoe.play;\n\nimport java.util.Scanner;\n\npublic class TicTacToe\
+    \ {\n\n\tprivate TicTacToe() {}\n\n\tpublic static void start() {\n\t\tScanner\
+    \ scanner = new Scanner(System.in);\n\n\t\twhile (true) {\n\t\t\tSystem.out.print(\"\
+    Input command: \");\n\t\t\tString input = scanner.nextLine();\n\t\t\tString status\
+    \ = input.split(\" \")[0];\n\n\t\t\tswitch (status) {\n\t\t\t\tcase \"start\"\
+    \ -> {\n\t\t\t\t\ttry {\n\t\t\t\t\t\tString mode = input.split(\" \")[1];\n\t\t\
+    \t\t\t\tString against = input.split(\" \")[2];\n\t\t\t\t\t\tMode levelOfDifficulty;\n\
+    \n\t\t\t\t\t\tswitch (mode) {\n\t\t\t\t\t\t\tcase \"easy\" -> {\n\t\t\t\t\t\t\t\
+    \tswitch (against) {\n\t\t\t\t\t\t\t\t\tcase \"easy\" -> {\n\t\t\t\t\t\t\t\t\t\
+    \tlevelOfDifficulty = new EasyMode(\"computer\", \"computer\");\n\t\t\t\t\t\t\t\
+    \t\t\tlevelOfDifficulty.battleAgainst();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\
+    \tcase \"user\" -> {\n\t\t\t\t\t\t\t\t\t\tlevelOfDifficulty = new EasyMode(\"\
+    computer\", \"user\");\n\t\t\t\t\t\t\t\t\t\tlevelOfDifficulty.battleAgainst();\n\
+    \t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tcase\
+    \ \"user\" -> {\n\t\t\t\t\t\t\t\tswitch (against) {\n\t\t\t\t\t\t\t\t\tcase \"\
+    easy\" -> {\n\t\t\t\t\t\t\t\t\t\tlevelOfDifficulty = new EasyMode(\"user\", \"\
+    computer\");\n\t\t\t\t\t\t\t\t\t\tlevelOfDifficulty.battleAgainst();\n\t\t\t\t\
+    \t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tcase \"medium\" -> {\n\t\t\t\t\t\t\t\t\t\tlevelOfDifficulty\
+    \ = new MediumMode(\"user\", \"computer\");\n\t\t\t\t\t\t\t\t\t\tlevelOfDifficulty.battleAgainst();\n\
+    \t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tcase \"user\" -> {\n\t\t\t\t\t\t\t\t\t\t\
+    levelOfDifficulty = new Mode(\"user\", \"user\");\n\t\t\t\t\t\t\t\t\t\tlevelOfDifficulty.battleAgainst();\n\
+    \t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\
+    \t\t} catch (ArrayIndexOutOfBoundsException aioobe) {\n\t\t\t\t\t\tSystem.out.println(\"\
+    Bad parameters!\");\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\tcase \"exit\" -> {\n\t\t\
+    \t\t\treturn;\n\t\t\t\t}\n\n\t\t\t\tdefault -> System.out.println(\"Invalid input\"\
+    );\n\t\t\t}\n\n\t\t}\n\t}\n\n\n}\n"
+  learner_created: true
+- name: src/tictactoe/play/EasyMode.java
+  visible: true
+  text: "package tictactoe.play;\n\nclass EasyMode extends Mode {\n\n\tEasyMode(String\
+    \ player1, String player2) {\n\t\tsuper(player1, player2);\n\t}\n\n\t@Override\n\
+    \tvoid battleAgainst() {\n\t\tGameStatus gameStatus = new GameStatus();\n\t\t\
+    createEmptyBoard();\n\t\tprintTable(ticTacToeTable);\n\t\tdo {\n\t\t\tswitch (getPlayer1())\
+    \ {\n\t\t\t\tcase \"user\" -> userInput();\n\t\t\t\tcase \"computer\" -> computerInput();\n\
+    \t\t\t}\n\n\t\t\tif (gameStatus.isGameOver(ticTacToeTable)) {\n\t\t\t\treturn;\n\
+    \t\t\t}\n\n\t\t\tswitch (getPlayer2()) {\n\t\t\t\tcase \"user\" -> userInput();\n\
+    \t\t\t\tcase \"computer\" -> computerInput();\n\t\t\t}\n\t\t} while(!gameStatus.isGameOver(ticTacToeTable));\n\
+    \t}\n\n\t@Override\n\tvoid computerInput() {\n\t\tGameStatus gameStatus = new\
+    \ GameStatus();\n\t\tgameStatus.setTicTacToe(ticTacToeTable);\n\n\t\tint xCoordinate;\n\
+    \t\tint yCoordinate;\n\t\tSystem.out.println(\"Making move level \\\"easy\\\"\"\
+    );\n\t\tdo {\n\t\t\txCoordinate = random.nextInt(3);\n\t\t\tyCoordinate = random.nextInt(3);\n\
+    \t\t} while(isOccupied(ticTacToeTable, xCoordinate, yCoordinate));\n\t\tticTacToeTable[xCoordinate][yCoordinate]\
+    \ = gameStatus.turn() ? 'X': 'O';\n\t\tprintTable(ticTacToeTable);\n\t}\n}\n"
+  learner_created: true
+- name: src/tictactoe/play/GameStatus.java
+  visible: true
+  text: "package tictactoe.play;\n\nclass GameStatus {\n\tprivate char[][] ticTacToe\
+    \ = new char[3][3];\n\n\tvoid setTicTacToe(char[][] table) {\n\t\tticTacToe =\
+    \ table;\n\t}\n\n\tboolean turn() {\n\t\tint counter = 0;\n\n\t\tfor (char[] x:\
+    \ ticTacToe) {\n\t\t\tfor (char y: x) {\n\t\t\t\tif (y == 'X' || y == 'O') {\n\
+    \t\t\t\t\tcounter++;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn counter % 2 == 0;\n\
+    \t}\n\n\tboolean isGameOver(char[][] ticTacToe) {\n\t\tsetTicTacToe(ticTacToe);\n\
+    \t\tString player = turn() ? \"O\": \"X\";\n\t\tfinal int zero = 0;\n\n\t\tif\
+    \ (hasWinner(player)) {\n\t\t\treturn true;\n\t\t}\n\n\t\tint counter = zero;\n\
+    \t\tfor (char[] x: ticTacToe) {\n\t\t\tfor (char y: x) {\n\t\t\t\tif (y != ' ')\
+    \ {\n\t\t\t\t\tcounter++;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tif (counter == 9)\
+    \ {\n\t\t\tSystem.out.println(\"Draw\");\n\t\t\treturn true;\n\t\t}\n\n\t\treturn\
+    \ false;\n\t}\n\n\tprivate boolean hasWinner(String player) {\n\t\treturn checkDiagonal(player)\
+    \ || checkHorizontalAndVertical(player);\n\t}\n\n\tprivate boolean checkDiagonal(String\
+    \ player) {\n\t\tMode mode = new Mode();\n\t\tif (ticTacToe[0][0] == ticTacToe[1][1]\
+    \ && ticTacToe[0][0] == ticTacToe[2][2] && mode.isOccupied(ticTacToe, 0, 0)) {\n\
+    \t\t\tprintWinner(player);\n\t\t\treturn true;\n\t\t}\n\n\t\tif (ticTacToe[0][2]\
+    \ == ticTacToe[1][1] && ticTacToe[0][2] == ticTacToe[2][0] && mode.isOccupied(ticTacToe,\
+    \ 0, 2)) {\n\t\t\tprintWinner(player);\n\t\t\treturn true;\n\t\t}\n\t\treturn\
+    \ false;\n\t}\n\n\tprivate boolean checkHorizontalAndVertical(String player) {\n\
+    \t\tMode mode = new Mode();\n\t\tfor (int i = 0; i < ticTacToe.length; i++) {\n\
+    \t\t\tif (ticTacToe[i][0] == ticTacToe[i][1] && ticTacToe[i][0] == ticTacToe[i][2]\
+    \ && mode.isOccupied(ticTacToe, i, 0)) {\n\t\t\t\tprintWinner(player);\n\t\t\t\
+    \treturn true;\n\t\t\t} else if (ticTacToe[0][i] == ticTacToe[1][i] && ticTacToe[0][i]\
+    \ == ticTacToe[2][i] && mode.isOccupied(ticTacToe, 0, i)) {\n\t\t\t\tprintWinner(player);\n\
+    \t\t\t\treturn true;\n\t\t\t}\n\t\t}\n\t\treturn false;\n\t}\n\n\tprivate void\
+    \ printWinner(String player) {\n\t\tSystem.out.printf(\"%s wins\\n\\n\", player);\n\
+    \t}\n}\n"
+  learner_created: true
+- name: src/tictactoe/play/Mode.java
+  visible: true
+  text: "package tictactoe.play;\n\nimport java.util.Arrays;\nimport java.util.Random;\n\
+    import java.util.Scanner;\n\nclass Mode {\n\n\tRandom random = new Random();\n\
+    \tchar[][] ticTacToeTable = new char[3][3];\n\n\tprivate String player1 = \"\"\
+    ;\n\tprivate String player2 = \"\";\n\n\tMode() {}\n\n\tMode(String player1, String\
+    \ player2) {\n\t\tthis.player1 = player1;\n\t\tthis.player2 = player2;\n\t}\n\n\
+    \tString getPlayer1() {\n\t\treturn player1;\n\t}\n\n\tString getPlayer2() {\n\
+    \t\treturn player2;\n\t}\n\n\tvoid createEmptyBoard() {\n\t\tfor (char[] chars:\
+    \ ticTacToeTable) {\n\t\t\tArrays.fill(chars, ' ');\n\t\t}\n\t}\n\n\tvoid userInput()\
+    \ {\n\t\tScanner scanner = new Scanner(System.in);\n\t\tGameStatus gameStatus\
+    \ = new GameStatus();\n\n\t\tint yCoordinate;\n\t\tint xCoordinate;\n\t\twhile\
+    \ (true) {\n\t\t\ttry {\n\t\t\t\tSystem.out.print(\"Enter the coordinates: \"\
+    );\n\t\t\t\tString coordinates = scanner.nextLine();\n\t\t\t\txCoordinate = Integer.parseInt(coordinates.split(\"\
+    \ \")[0]);\n\t\t\t\tyCoordinate = Integer.parseInt(coordinates.split(\" \")[1]);\n\
+    \n\t\t\t\tif (checkRange(xCoordinate, yCoordinate)) {\n\t\t\t\t\txCoordinate -=\
+    \ 1;\n\t\t\t\t\tyCoordinate -= 1;\n\n\t\t\t\t\tif (isOccupied(ticTacToeTable,\
+    \ xCoordinate, yCoordinate)) {\n\t\t\t\t\t\tSystem.out.println(\"This cell is\
+    \ occupied! Choose another one!\");\n\t\t\t\t\t} else {\n\t\t\t\t\t\tticTacToeTable[xCoordinate][yCoordinate]\
+    \ = gameStatus.turn() ? 'X': 'O';\n\t\t\t\t\t\tprintTable(ticTacToeTable);\n\t\
+    \t\t\t\t\tbreak;\n\t\t\t\t\t}\n\n\t\t\t\t} else {\n\t\t\t\t\tSystem.out.println(\"\
+    Coordinates should be from 1 to 3!\");\n\t\t\t\t}\n\t\t\t} catch (NumberFormatException\
+    \ nfe) {\n\t\t\t\tSystem.out.println(\"You should enter numbers!\");\n\t\t\t}\
+    \ catch (ArrayIndexOutOfBoundsException aioobe) {\n\t\t\t\tSystem.out.println(\"\
+    Please give two numbers!\");\n\t\t\t}\n\t\t}\n\t}\n\n\tvoid computerInput() {}\n\
+    \n\tvoid battleAgainst() {\n\t\tGameStatus gameStatus = new GameStatus();\n\t\t\
+    createEmptyBoard();\n\t\tprintTable(ticTacToeTable);\n\t\tdo {\n\t\t\tuserInput();\n\
+    \t\t} while(!gameStatus.isGameOver(ticTacToeTable));\n\t}\n\n\tboolean isOccupied(char[][]\
+    \ ticTacToe, int xCoordinate, int yCoordinate) {\n\t\treturn ticTacToe[xCoordinate][yCoordinate]\
+    \ != ' ';\n\t}\n\n\tstatic void printTable(char[][] ticTacToe) {\n\t\tSystem.out.println(\"\
+    ---------\");\n\t\tfor (char[] firstArray: ticTacToe) {\n\t\t\tSystem.out.print(\"\
+    |\");\n\t\t\tfor (char secondArray: firstArray) {\n\t\t\t\tSystem.out.print(\"\
+    \ \" + secondArray);\n\t\t\t}\n\t\t\tSystem.out.println(\" |\");\n\t\t}\n\t\t\
+    System.out.println(\"---------\");\n\t}\n\n\tstatic boolean checkRange(int x,\
+    \ int y) {\n\t\treturn (1 <= x && x <= 3) && (1 <= y && y <= 3);\n\t}\n}\n"
+  learner_created: true
+- name: src/tictactoe/play/MediumMode.java
+  visible: true
+  text: "package tictactoe.play;\n\npublic class MediumMode extends Mode {\n\tMediumMode(String\
+    \ player1, String player2) {\n\t\tsuper(player1, player2);\n\t}\n\n\t@Override\n\
+    \tvoid battleAgainst() {\n\t\tGameStatus gameStatus = new GameStatus();\n\t\t\
+    createEmptyBoard();\n\t\tprintTable(ticTacToeTable);\n\t\tdo {\n\t\t\tswitch (getPlayer1())\
+    \ {\n\t\t\t\tcase \"user\" -> userInput();\n\t\t\t\tcase \"computer\" -> computerInput();\n\
+    \t\t\t}\n\n\t\t\tif (gameStatus.isGameOver(ticTacToeTable)) {\n\t\t\t\treturn;\n\
+    \t\t\t}\n\n\t\t\tswitch (getPlayer2()) {\n\t\t\t\tcase \"user\" -> userInput();\n\
+    \t\t\t\tcase \"computer\" -> computerInput();\n\t\t\t}\n\t\t} while (!gameStatus.isGameOver(ticTacToeTable));\n\
+    \t}\n\n\t@Override\n\tvoid computerInput() {\n\t\tGameStatus gameStatus = new\
+    \ GameStatus();\n\t\tchar turn = gameStatus.turn() ? 'O': 'X';\n\n\t\tint[] coordinate\
+    \ = new int[2];\n\t\tint xCoordinate;\n\t\tint yCoordinate;\n\t\tSystem.out.println(\"\
+    Making move level \\\"medium\\\"\");\n\t\tSystem.out.println(isAttackOrDefend(turn,\
+    \ coordinate));\n\t\tSystem.out.printf(\"%d %d\\n\", coordinate[0], coordinate[1]);\n\
+    \n\t\tif (isAttackOrDefend(turn, coordinate)) {\n\t\t\txCoordinate = coordinate[0];\n\
+    \t\t\tyCoordinate = coordinate[1];\n\t\t} else {\n\t\t\tdo {\n\t\t\t\txCoordinate\
+    \ = random.nextInt(3);\n\t\t\t\tyCoordinate = random.nextInt(3);\n\t\t\t} while\
+    \ (isOccupied(ticTacToeTable, xCoordinate, yCoordinate));\n\t\t}\n\t\tticTacToeTable[xCoordinate][yCoordinate]\
+    \ = turn;\n\t\tprintTable(ticTacToeTable);\n\t}\n\n\tprivate boolean isAttackOrDefend(char\
+    \ turn, int[] coordinates) {\n\n\t\tfor (int i = 0; i < ticTacToeTable.length;\
+    \ i++) {\n\n\t\t\tif (isHorizontal(coordinates, i, turn) && !isOccupied(ticTacToeTable,\
+    \ coordinates[0], coordinates[1])) {\n\t\t\t\treturn true;\n\t\t\t}\n\n\t\t\t\
+    if (isVertical(coordinates, i, turn) && !isOccupied(ticTacToeTable, coordinates[0],\
+    \ coordinates[1])) {\n\t\t\t\treturn true;\n\t\t\t}\n\t\t}\n\n\t\tif (isLeftDiagonal(coordinates,\
+    \ turn) && !isOccupied(ticTacToeTable, coordinates[0], coordinates[1])) {\n\t\t\
+    \treturn true;\n\t\t}\n\t\treturn isRightDiagonal(coordinates, turn) && !isOccupied(ticTacToeTable,\
+    \ coordinates[0], coordinates[1]);\n\t}\n\n\tprivate boolean isHorizontal(int[]\
+    \ coordinates, int i, char turn) {\n\t\tint oCounter = 0;\n\t\tint xCounter =\
+    \ 0;\n\n\t\tSystem.out.println(\"isHorizontal method\");\n\t\tfor (int j = 0;\
+    \ j < ticTacToeTable.length; j++) {\n\t\t\tint[] coordinatesAndCounter = coordinatesAndCounter(i,\
+    \ j, xCounter, oCounter);\n\t\t\tcoordinates[0] = coordinatesAndCounter[0];\n\t\
+    \t\tcoordinates[1] = coordinatesAndCounter[1];\n\n\t\t\txCounter = coordinatesAndCounter[2];\n\
+    \t\t\toCounter = coordinatesAndCounter[3];\n\t\t}\n\n\t\tSystem.out.println();\n\
+    \t\treturn attackOrDefend(xCounter, oCounter, turn);\n\t}\n\n\tprivate boolean\
+    \ isVertical(int[] coordinates, int i, char turn) {\n\t\tint xCounter = 0;\n\t\
+    \tint oCounter = 0;\n\t\tfor (int j = 0; j < ticTacToeTable.length; j++) {\n\t\
+    \t\tint[] coordinatesAndCounter = coordinatesAndCounter(j, i, xCounter, oCounter);\n\
+    \t\t\tcoordinates[0] = coordinatesAndCounter[0];\n\t\t\tcoordinates[1] = coordinatesAndCounter[1];\n\
+    \n\t\t\txCounter = coordinatesAndCounter[2];\n\t\t\toCounter = coordinatesAndCounter[3];\n\
+    \t\t}\n\n\t\treturn attackOrDefend(xCounter, oCounter, turn);\n\t}\n\n\tprivate\
+    \ boolean isLeftDiagonal(int[] coordinates, char turn) {\n\t\tint xCounter = 0;\n\
+    \t\tint oCounter = 0;\n\t\tfor (int i = 0; i < ticTacToeTable.length; i++) {\n\
+    \t\t\tint[] coordinatesAndCounter = coordinatesAndCounter(i, i, xCounter, oCounter);\n\
+    \t\t\tcoordinates[0] = coordinatesAndCounter[0];\n\t\t\tcoordinates[1] = coordinatesAndCounter[1];\n\
+    \n\t\t\txCounter = coordinatesAndCounter[2];\n\t\t\toCounter = coordinatesAndCounter[3];\n\
+    \t\t}\n\n\t\treturn attackOrDefend(xCounter, oCounter, turn);\n\t}\n\n\tprivate\
+    \ boolean isRightDiagonal(int[] coordinates, char turn) {\n\t\tint xCounter =\
+    \ 0;\n\t\tint oCounter = 0;\n\t\tint j = ticTacToeTable.length - 1;\n\n\t\tSystem.out.println(\"\
+    \\nisRightDiagonal method: \");\n\t\tfor (int i = 0; i < ticTacToeTable.length;\
+    \ i++, j--) {\n\t\t\tint[] coordinatesAndCounter = coordinatesAndCounter(i, j,\
+    \ xCounter, oCounter);\n\t\t\tcoordinates[0] = coordinatesAndCounter[0];\n\t\t\
+    \tcoordinates[1] = coordinatesAndCounter[1];\n\n\t\t\txCounter = coordinatesAndCounter[2];\n\
+    \t\t\toCounter = coordinatesAndCounter[3];\n\n\t\t\tSystem.out.println(\"x coordinate:\
+    \ \" + coordinates[0]);\n\t\t\tSystem.out.println(\"y coordinate: \" + coordinates[1]);\n\
+    \n\t\t\tSystem.out.println(\"x counter: \" + xCounter);\n\t\t\tSystem.out.println(\"\
+    y counter: \" + oCounter);\n\t\t}\n\n\t\tSystem.out.println();\n\t\treturn attackOrDefend(xCounter,\
+    \ oCounter, turn);\n\t}\n\n\tprivate int[] coordinatesAndCounter(int x, int y,\
+    \ int xCounter, int oCounter) {\n\t\tint[] coordinatesAndCounter = new int[4];\n\
+    \t\tswitch (ticTacToeTable[x][y]) {\n\t\t\tcase 'X' -> xCounter++;\n\t\t\tcase\
+    \ 'O' -> oCounter++;\n\t\t\tdefault -> {\n\t\t\t\tcoordinatesAndCounter[0] = x;\n\
+    \t\t\t\tcoordinatesAndCounter[1] = y;\n\t\t\t}\n\t\t}\n\n\t\tcoordinatesAndCounter[2]\
+    \ = xCounter;\n\t\tcoordinatesAndCounter[3] = oCounter;\n\t\treturn coordinatesAndCounter;\n\
+    \t}\n\n\tprivate boolean attackOrDefend(int xCounter, int oCounter, char turn)\
+    \  {\n\t\tif (xCounter + oCounter != 3) {\n\t\t\tif (xCounter == 2 && turn ==\
+    \ 'X' || oCounter == 2 && turn == 'O') {\n\t\t\t\treturn true;\n\t\t\t} else return\
+    \ xCounter == 2 && turn == 'O' || oCounter == 2 && turn == 'X';\n\t\t}\n\t\treturn\
+    \ false;\n\t}\n}\n"
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7438#comment
 status: Unchecked
 record: -1

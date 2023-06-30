@@ -20,6 +20,7 @@ public class TicTacToe {
 						String mode = input.split(" ")[1];
 						String against = input.split(" ")[2];
 						Mode levelOfDifficulty;
+
 						switch (mode) {
 							case "easy" -> {
 								switch (against) {
@@ -38,6 +39,10 @@ public class TicTacToe {
 								switch (against) {
 									case "easy" -> {
 										levelOfDifficulty = new EasyMode("user", "computer");
+										levelOfDifficulty.battleAgainst();
+									}
+									case "medium" -> {
+										levelOfDifficulty = new MediumMode("user", "computer");
 										levelOfDifficulty.battleAgainst();
 									}
 									case "user" -> {
