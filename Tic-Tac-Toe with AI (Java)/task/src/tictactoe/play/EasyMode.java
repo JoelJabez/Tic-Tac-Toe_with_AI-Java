@@ -1,8 +1,5 @@
 package tictactoe.play;
 
-import static tictactoe.play.GameStatus.isGameOver;
-import static tictactoe.play.GameStatus.turn;
-
 class EasyMode extends Mode {
 
 	EasyMode(String player1, String player2) {
@@ -11,6 +8,7 @@ class EasyMode extends Mode {
 
 	@Override
 	void battleAgainst() {
+		GameStatus gameStatus = new GameStatus();
 		createEmptyBoard();
 		printTable(ticTacToeTable);
 		do {
@@ -19,7 +17,7 @@ class EasyMode extends Mode {
 				case "computer" -> computerInput();
 			}
 
-			if (isGameOver(ticTacToeTable)) {
+			if (gameStatus.isGameOver(ticTacToeTable)) {
 				return;
 			}
 
@@ -27,19 +25,22 @@ class EasyMode extends Mode {
 				case "user" -> userInput();
 				case "computer" -> computerInput();
 			}
-		} while(!isGameOver(ticTacToeTable));
+		} while(!gameStatus.isGameOver(ticTacToeTable));
 	}
 
 	@Override
 	void computerInput() {
+		GameStatus gameStatus = new GameStatus();
+		gameStatus.setTicTacToe(ticTacToeTable);
+
 		int xCoordinate;
 		int yCoordinate;
 		System.out.println("Making move level \"easy\"");
 		do {
 			xCoordinate = random.nextInt(3);
 			yCoordinate = random.nextInt(3);
-		} while(isOccupied(ticTacToeTable, yCoordinate, xCoordinate));
-		ticTacToeTable[xCoordinate][yCoordinate] = turn() ? 'X': 'O';
+		} while(isOccupied(ticTacToeTable, xCoordinate, yCoordinate));
+		ticTacToeTable[xCoordinate][yCoordinate] = gameStatus.turn() ? 'X': 'O';
 		printTable(ticTacToeTable);
 	}
 }

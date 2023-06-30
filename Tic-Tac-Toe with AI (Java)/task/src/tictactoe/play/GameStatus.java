@@ -1,15 +1,13 @@
 package tictactoe.play;
 
-import static tictactoe.play.Mode.isOccupied;
-
 class GameStatus {
-	private static char[][] ticTacToe = new char[3][3];
+	private char[][] ticTacToe = new char[3][3];
 
-	private static void setTicTacToe(char[][] table) {
+	void setTicTacToe(char[][] table) {
 		ticTacToe = table;
 	}
 
-	static boolean turn() {
+	boolean turn() {
 		int counter = 0;
 
 		for (char[] x: ticTacToe) {
@@ -23,7 +21,7 @@ class GameStatus {
 		return counter % 2 == 0;
 	}
 
-	static boolean isGameOver(char[][] ticTacToe) {
+	boolean isGameOver(char[][] ticTacToe) {
 		setTicTacToe(ticTacToe);
 		String player = turn() ? "O": "X";
 		final int zero = 0;
@@ -49,29 +47,31 @@ class GameStatus {
 		return false;
 	}
 
-	private static boolean hasWinner(String player) {
+	private boolean hasWinner(String player) {
 		return checkDiagonal(player) || checkHorizontalAndVertical(player);
 	}
 
-	private static boolean checkDiagonal(String player) {
-		if (ticTacToe[0][0] == ticTacToe[1][1] && ticTacToe[0][0] == ticTacToe[2][2] && isOccupied(ticTacToe, 0, 0)) {
+	private boolean checkDiagonal(String player) {
+		Mode mode = new Mode();
+		if (ticTacToe[0][0] == ticTacToe[1][1] && ticTacToe[0][0] == ticTacToe[2][2] && mode.isOccupied(ticTacToe, 0, 0)) {
 			printWinner(player);
 			return true;
 		}
 
-		if (ticTacToe[0][2] == ticTacToe[1][1] && ticTacToe[0][2] == ticTacToe[2][0] && isOccupied(ticTacToe, 2, 0)) {
+		if (ticTacToe[0][2] == ticTacToe[1][1] && ticTacToe[0][2] == ticTacToe[2][0] && mode.isOccupied(ticTacToe, 0, 2)) {
 			printWinner(player);
 			return true;
 		}
 		return false;
 	}
 
-	private static boolean checkHorizontalAndVertical(String player) {
+	private boolean checkHorizontalAndVertical(String player) {
+		Mode mode = new Mode();
 		for (int i = 0; i < ticTacToe.length; i++) {
-			if (ticTacToe[i][0] == ticTacToe[i][1] && ticTacToe[i][0] == ticTacToe[i][2] && isOccupied(ticTacToe, 0, i)) {
+			if (ticTacToe[i][0] == ticTacToe[i][1] && ticTacToe[i][0] == ticTacToe[i][2] && mode.isOccupied(ticTacToe, i, 0)) {
 				printWinner(player);
 				return true;
-			} else if (ticTacToe[0][i] == ticTacToe[1][i] && ticTacToe[0][i] == ticTacToe[2][i] && isOccupied(ticTacToe, i, 0)) {
+			} else if (ticTacToe[0][i] == ticTacToe[1][i] && ticTacToe[0][i] == ticTacToe[2][i] && mode.isOccupied(ticTacToe, 0, i)) {
 				printWinner(player);
 				return true;
 			}
@@ -79,7 +79,7 @@ class GameStatus {
 		return false;
 	}
 
-	private static void printWinner(String player) {
+	private void printWinner(String player) {
 		System.out.printf("%s wins\n\n", player);
 	}
 }
