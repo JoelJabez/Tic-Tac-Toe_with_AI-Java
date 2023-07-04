@@ -28,10 +28,18 @@ public class TicTacToe {
 										levelOfDifficulty = new EasyMode("computer", "computer");
 										levelOfDifficulty.battleAgainst();
 									}
+
 									case "user" -> {
 										levelOfDifficulty = new EasyMode("computer", "user");
 										levelOfDifficulty.battleAgainst();
 									}
+								}
+							}
+
+							case "medium" -> {
+								if (against.equals("user")) {
+									levelOfDifficulty = new MediumMode("computer", "user");
+									levelOfDifficulty.battleAgainst();
 								}
 							}
 
@@ -41,10 +49,17 @@ public class TicTacToe {
 										levelOfDifficulty = new EasyMode("user", "computer");
 										levelOfDifficulty.battleAgainst();
 									}
+
 									case "medium" -> {
 										levelOfDifficulty = new MediumMode("user", "computer");
 										levelOfDifficulty.battleAgainst();
 									}
+
+									case "hard" -> {
+										levelOfDifficulty = new HardMode("user", "computer");
+										levelOfDifficulty.battleAgainst();
+									}
+
 									case "user" -> {
 										levelOfDifficulty = new Mode("user", "user");
 										levelOfDifficulty.battleAgainst();

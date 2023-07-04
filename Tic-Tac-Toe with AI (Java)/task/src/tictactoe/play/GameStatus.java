@@ -9,7 +9,6 @@ class GameStatus {
 
 	boolean turn() {
 		int counter = 0;
-
 		for (char[] x: ticTacToe) {
 			for (char y: x) {
 				if (y == 'X' || y == 'O') {
