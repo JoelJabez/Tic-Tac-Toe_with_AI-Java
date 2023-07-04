@@ -8,7 +8,6 @@ class Mode {
 
 	Random random = new Random();
 	char[][] ticTacToeTable = new char[3][3];
-
 	private String player1 = "";
 	private String player2 = "";
 
@@ -25,6 +24,14 @@ class Mode {
 
 	String getPlayer2() {
 		return player2;
+	}
+
+	void playerMove(String player) {
+		if (player.equals("user")) {
+			userInput();
+		} else {
+			computerInput();
+		}
 	}
 
 	void createEmptyBoard() {
@@ -53,6 +60,7 @@ class Mode {
 					if (isOccupied(ticTacToeTable, xCoordinate, yCoordinate)) {
 						System.out.println("This cell is occupied! Choose another one!");
 					} else {
+						gameStatus.setTicTacToe(ticTacToeTable);
 						ticTacToeTable[xCoordinate][yCoordinate] = gameStatus.turn() ? 'X': 'O';
 						printTable(ticTacToeTable);
 						break;
@@ -76,7 +84,12 @@ class Mode {
 		createEmptyBoard();
 		printTable(ticTacToeTable);
 		do {
-			userInput();
+			playerMove(getPlayer1());
+			if (gameStatus.isGameOver(ticTacToeTable)) {
+				return;
+			}
+
+			playerMove(getPlayer2());
 		} while(!gameStatus.isGameOver(ticTacToeTable));
 	}
 
@@ -84,7 +97,7 @@ class Mode {
 		return ticTacToe[xCoordinate][yCoordinate] != ' ';
 	}
 
-	static void printTable(char[][] ticTacToe) {
+	void printTable(char[][] ticTacToe) {
 		System.out.println("---------");
 		for (char[] firstArray: ticTacToe) {
 			System.out.print("|");
@@ -96,7 +109,7 @@ class Mode {
 		System.out.println("---------");
 	}
 
-	static boolean checkRange(int x, int y) {
+	boolean checkRange(int x, int y) {
 		return (1 <= x && x <= 3) && (1 <= y && y <= 3);
 	}
 }

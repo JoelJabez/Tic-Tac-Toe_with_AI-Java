@@ -6,28 +6,6 @@ public class MediumMode extends Mode {
 	}
 
 	@Override
-	void battleAgainst() {
-		GameStatus gameStatus = new GameStatus();
-		createEmptyBoard();
-		printTable(ticTacToeTable);
-		do {
-			switch (getPlayer1()) {
-				case "user" -> userInput();
-				case "computer" -> computerInput();
-			}
-
-			if (gameStatus.isGameOver(ticTacToeTable)) {
-				return;
-			}
-
-			switch (getPlayer2()) {
-				case "user" -> userInput();
-				case "computer" -> computerInput();
-			}
-		} while (!gameStatus.isGameOver(ticTacToeTable));
-	}
-
-	@Override
 	void computerInput() {
 		GameStatus gameStatus = new GameStatus();
 		char turn = gameStatus.turn() ? 'O': 'X';
