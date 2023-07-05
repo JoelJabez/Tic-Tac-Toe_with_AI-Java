@@ -8,6 +8,7 @@ class Mode {
 
 	Random random = new Random();
 	char[][] ticTacToeTable = new char[3][3];
+	final int LENGTH = ticTacToeTable.length;
 	private String player1 = "";
 	private String player2 = "";
 
