@@ -21,48 +21,69 @@ public class TicTacToe {
 						String against = input.split(" ")[2];
 						Mode levelOfDifficulty;
 
-						switch (mode) {
-							case "easy" -> {
-								switch (against) {
-									case "easy" -> {
-										levelOfDifficulty = new EasyMode("computer", "computer");
-										levelOfDifficulty.battleAgainst();
-									}
+						if (mode.equals(against)) {
+							switch (mode) {
+								case "easy" -> {
+									levelOfDifficulty = new EasyMode(mode, against);
+									levelOfDifficulty.battleAgainst();
+								}
 
-									case "user" -> {
+								case "medium" -> {
+									levelOfDifficulty = new MediumMode(mode, against);
+									levelOfDifficulty.battleAgainst();
+								}
+
+								case "hard" -> {
+									levelOfDifficulty = new HardMode(mode, against);
+									levelOfDifficulty.battleAgainst();
+								}
+
+								case "user" -> {
+									levelOfDifficulty = new Mode(mode, against);
+									levelOfDifficulty.battleAgainst();
+								}
+							}
+						}
+
+						else {
+							switch (mode) {
+								case "easy" -> {
+									if (against.equals("user")) {
 										levelOfDifficulty = new EasyMode("computer", "user");
 										levelOfDifficulty.battleAgainst();
 									}
 								}
-							}
 
-							case "medium" -> {
-								if (against.equals("user")) {
-									levelOfDifficulty = new MediumMode("computer", "user");
-									levelOfDifficulty.battleAgainst();
+								case "medium" -> {
+									if (against.equals("user")) {
+										levelOfDifficulty = new MediumMode("computer", "user");
+										levelOfDifficulty.battleAgainst();
+									}
 								}
-							}
 
-							case "user" -> {
-								switch (against) {
-									case "easy" -> {
-										levelOfDifficulty = new EasyMode("user", "computer");
+								case "hard" -> {
+									if (against.equals("user")) {
+										levelOfDifficulty = new HardMode("computer", "user");
 										levelOfDifficulty.battleAgainst();
 									}
+								}
 
-									case "medium" -> {
-										levelOfDifficulty = new MediumMode("user", "computer");
-										levelOfDifficulty.battleAgainst();
-									}
+								case "user" -> {
+									switch (against) {
+										case "easy" -> {
+											levelOfDifficulty = new EasyMode("user", "computer");
+											levelOfDifficulty.battleAgainst();
+										}
 
-									case "hard" -> {
-										levelOfDifficulty = new HardMode("user", "computer");
-										levelOfDifficulty.battleAgainst();
-									}
+										case "medium" -> {
+											levelOfDifficulty = new MediumMode("user", "computer");
+											levelOfDifficulty.battleAgainst();
+										}
 
-									case "user" -> {
-										levelOfDifficulty = new Mode("user", "user");
-										levelOfDifficulty.battleAgainst();
+										case "hard" -> {
+											levelOfDifficulty = new HardMode("user", "computer");
+											levelOfDifficulty.battleAgainst();
+										}
 									}
 								}
 							}

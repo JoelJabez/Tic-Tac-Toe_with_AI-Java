@@ -23,13 +23,12 @@ class GameStatus {
 	boolean isGameOver(char[][] ticTacToe) {
 		setTicTacToe(ticTacToe);
 		String player = turn() ? "O": "X";
-		final int zero = 0;
 
-		if (hasWinner(player)) {
+		if (hasWinner(player, true)) {
 			return true;
 		}
 
-		int counter = zero;
+		int counter = 0;
 		for (char[] x: ticTacToe) {
 			for (char y: x) {
 				if (y != ' ') {
@@ -46,32 +45,40 @@ class GameStatus {
 		return false;
 	}
 
-	private boolean hasWinner(String player) {
-		return checkDiagonal(player) || checkHorizontalAndVertical(player);
+	boolean hasWinner(String player, boolean isPrintWinner) {
+		return checkDiagonal(player, isPrintWinner) || checkHorizontalAndVertical(player, isPrintWinner);
 	}
 
-	private boolean checkDiagonal(String player) {
+	private boolean checkDiagonal(String player, boolean isPrintWinner) {
 		Mode mode = new Mode();
 		if (ticTacToe[0][0] == ticTacToe[1][1] && ticTacToe[0][0] == ticTacToe[2][2] && mode.isOccupied(ticTacToe, 0, 0)) {
-			printWinner(player);
+			if (isPrintWinner) {
+				printWinner(player);
+			}
 			return true;
 		}
 
 		if (ticTacToe[0][2] == ticTacToe[1][1] && ticTacToe[0][2] == ticTacToe[2][0] && mode.isOccupied(ticTacToe, 0, 2)) {
-			printWinner(player);
+			if (isPrintWinner) {
+				printWinner(player);
+			}
 			return true;
 		}
 		return false;
 	}
 
-	private boolean checkHorizontalAndVertical(String player) {
+	private boolean checkHorizontalAndVertical(String player, boolean isPrintWinner) {
 		Mode mode = new Mode();
 		for (int i = 0; i < ticTacToe.length; i++) {
 			if (ticTacToe[i][0] == ticTacToe[i][1] && ticTacToe[i][0] == ticTacToe[i][2] && mode.isOccupied(ticTacToe, i, 0)) {
-				printWinner(player);
+				if (isPrintWinner) {
+					printWinner(player);
+				}
 				return true;
 			} else if (ticTacToe[0][i] == ticTacToe[1][i] && ticTacToe[0][i] == ticTacToe[2][i] && mode.isOccupied(ticTacToe, 0, i)) {
-				printWinner(player);
+				if (isPrintWinner) {
+					printWinner(player);
+				}
 				return true;
 			}
 		}

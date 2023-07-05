@@ -8,14 +8,13 @@ public class MediumMode extends Mode {
 	@Override
 	void computerInput() {
 		GameStatus gameStatus = new GameStatus();
-		char turn = gameStatus.turn() ? 'O': 'X';
+		gameStatus.setTicTacToe(ticTacToeTable);
+		char turn = gameStatus.turn() ? 'X': 'O';
 
 		int[] coordinate = new int[2];
 		int xCoordinate;
 		int yCoordinate;
 		System.out.println("Making move level \"medium\"");
-		System.out.println(isAttackOrDefend(turn, coordinate));
-		System.out.printf("%d %d\n", coordinate[0], coordinate[1]);
 
 		if (isAttackOrDefend(turn, coordinate)) {
 			xCoordinate = coordinate[0];
@@ -31,39 +30,39 @@ public class MediumMode extends Mode {
 	}
 
 	private boolean isAttackOrDefend(char turn, int[] coordinates) {
-
 		for (int i = 0; i < ticTacToeTable.length; i++) {
-
-			if (isHorizontal(coordinates, i, turn) && !isOccupied(ticTacToeTable, coordinates[0], coordinates[1])) {
-				return true;
-			}
-
-			if (isVertical(coordinates, i, turn) && !isOccupied(ticTacToeTable, coordinates[0], coordinates[1])) {
+			if (checkHorizontalAndVertical(turn, coordinates, i)) {
 				return true;
 			}
 		}
+		return checkDiagonals(turn, coordinates);
+	}
 
-		if (isLeftDiagonal(coordinates, turn) && !isOccupied(ticTacToeTable, coordinates[0], coordinates[1])) {
+	private boolean checkDiagonals(char turn, int[] coordinates) {
+		if (isLeftDiagonal(coordinates, turn) && isEmpty(coordinates[0], coordinates[1])) {
 			return true;
 		}
-		return isRightDiagonal(coordinates, turn) && !isOccupied(ticTacToeTable, coordinates[0], coordinates[1]);
+		return isRightDiagonal(coordinates, turn) && isEmpty(coordinates[0], coordinates[1]);
+	}
+
+	private boolean checkHorizontalAndVertical(char turn, int[] coordinates, int i) {
+		if (isHorizontal(coordinates, i, turn) && isEmpty(coordinates[0], coordinates[1])) {
+			return true;
+		}
+
+		return isVertical(coordinates, i, turn) && isEmpty(coordinates[0], coordinates[1]);
 	}
 
 	private boolean isHorizontal(int[] coordinates, int i, char turn) {
 		int oCounter = 0;
 		int xCounter = 0;
 
-		System.out.println("isHorizontal method");
 		for (int j = 0; j < ticTacToeTable.length; j++) {
-			int[] coordinatesAndCounter = coordinatesAndCounter(i, j, xCounter, oCounter);
-			coordinates[0] = coordinatesAndCounter[0];
-			coordinates[1] = coordinatesAndCounter[1];
-
-			xCounter = coordinatesAndCounter[2];
-			oCounter = coordinatesAndCounter[3];
+			int[] counter = coordinateToPlace(i, j, xCounter, oCounter, coordinates);
+			xCounter = counter[0];
+			oCounter = counter[1];
 		}
 
-		System.out.println();
 		return attackOrDefend(xCounter, oCounter, turn);
 	}
 
@@ -71,12 +70,9 @@ public class MediumMode extends Mode {
 		int xCounter = 0;
 		int oCounter = 0;
 		for (int j = 0; j < ticTacToeTable.length; j++) {
-			int[] coordinatesAndCounter = coordinatesAndCounter(j, i, xCounter, oCounter);
-			coordinates[0] = coordinatesAndCounter[0];
-			coordinates[1] = coordinatesAndCounter[1];
-
-			xCounter = coordinatesAndCounter[2];
-			oCounter = coordinatesAndCounter[3];
+			int[] counter = coordinateToPlace(j, i, xCounter, oCounter, coordinates);
+			xCounter = counter[0];
+			oCounter = counter[1];
 		}
 
 		return attackOrDefend(xCounter, oCounter, turn);
@@ -86,12 +82,9 @@ public class MediumMode extends Mode {
 		int xCounter = 0;
 		int oCounter = 0;
 		for (int i = 0; i < ticTacToeTable.length; i++) {
-			int[] coordinatesAndCounter = coordinatesAndCounter(i, i, xCounter, oCounter);
-			coordinates[0] = coordinatesAndCounter[0];
-			coordinates[1] = coordinatesAndCounter[1];
-
-			xCounter = coordinatesAndCounter[2];
-			oCounter = coordinatesAndCounter[3];
+			int[] counter = coordinateToPlace(i, i, xCounter, oCounter, coordinates);
+			xCounter = counter[0];
+			oCounter = counter[1];
 		}
 
 		return attackOrDefend(xCounter, oCounter, turn);
@@ -102,40 +95,29 @@ public class MediumMode extends Mode {
 		int oCounter = 0;
 		int j = ticTacToeTable.length - 1;
 
-		System.out.println("\nisRightDiagonal method: ");
 		for (int i = 0; i < ticTacToeTable.length; i++, j--) {
-			int[] coordinatesAndCounter = coordinatesAndCounter(i, j, xCounter, oCounter);
-			coordinates[0] = coordinatesAndCounter[0];
-			coordinates[1] = coordinatesAndCounter[1];
-
-			xCounter = coordinatesAndCounter[2];
-			oCounter = coordinatesAndCounter[3];
-
-			System.out.println("x coordinate: " + coordinates[0]);
-			System.out.println("y coordinate: " + coordinates[1]);
-
-			System.out.println("x counter: " + xCounter);
-			System.out.println("y counter: " + oCounter);
+			int[] counter = coordinateToPlace(i, j, xCounter, oCounter, coordinates);
+			xCounter = counter[0];
+			oCounter = counter[1];
 		}
 
-		System.out.println();
 		return attackOrDefend(xCounter, oCounter, turn);
 	}
 
-	private int[] coordinatesAndCounter(int x, int y, int xCounter, int oCounter) {
-		int[] coordinatesAndCounter = new int[4];
+	private int[] coordinateToPlace(int x, int y, int xCounter, int oCounter, int[] coordinates) {
+		int[] counter = new int[2];
 		switch (ticTacToeTable[x][y]) {
 			case 'X' -> xCounter++;
 			case 'O' -> oCounter++;
 			default -> {
-				coordinatesAndCounter[0] = x;
-				coordinatesAndCounter[1] = y;
+				coordinates[0] = x;
+				coordinates[1] = y;
 			}
 		}
 
-		coordinatesAndCounter[2] = xCounter;
-		coordinatesAndCounter[3] = oCounter;
-		return coordinatesAndCounter;
+		counter[0] = xCounter;
+		counter[1] = oCounter;
+		return counter;
 	}
 
 	private boolean attackOrDefend(int xCounter, int oCounter, char turn)  {
@@ -145,5 +127,9 @@ public class MediumMode extends Mode {
 			} else return xCounter == 2 && turn == 'O' || oCounter == 2 && turn == 'X';
 		}
 		return false;
+	}
+
+	boolean isEmpty(int x, int y) {
+		return ticTacToeTable[x][y] == ' ';
 	}
 }

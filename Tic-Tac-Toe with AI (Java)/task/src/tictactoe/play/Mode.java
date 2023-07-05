@@ -26,7 +26,7 @@ class Mode {
 		return player2;
 	}
 
-	void playerMove(String player) {
+	void determinePlayer(String player) {
 		if (player.equals("user")) {
 			userInput();
 		} else {
@@ -40,9 +40,10 @@ class Mode {
 		}
 	}
 
-	void userInput() {
+	private void userInput() {
 		Scanner scanner = new Scanner(System.in);
 		GameStatus gameStatus = new GameStatus();
+		gameStatus.setTicTacToe(ticTacToeTable);
 
 		int yCoordinate;
 		int xCoordinate;
@@ -60,8 +61,8 @@ class Mode {
 					if (isOccupied(ticTacToeTable, xCoordinate, yCoordinate)) {
 						System.out.println("This cell is occupied! Choose another one!");
 					} else {
-						gameStatus.setTicTacToe(ticTacToeTable);
 						ticTacToeTable[xCoordinate][yCoordinate] = gameStatus.turn() ? 'X': 'O';
+						gameStatus.setTicTacToe(ticTacToeTable);
 						printTable(ticTacToeTable);
 						break;
 					}
@@ -84,12 +85,12 @@ class Mode {
 		createEmptyBoard();
 		printTable(ticTacToeTable);
 		do {
-			playerMove(getPlayer1());
+			determinePlayer(getPlayer1());
 			if (gameStatus.isGameOver(ticTacToeTable)) {
 				return;
 			}
 
-			playerMove(getPlayer2());
+			determinePlayer(getPlayer2());
 		} while(!gameStatus.isGameOver(ticTacToeTable));
 	}
 
