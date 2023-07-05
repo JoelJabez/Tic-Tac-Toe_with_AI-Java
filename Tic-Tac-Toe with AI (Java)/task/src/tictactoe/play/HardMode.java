@@ -9,7 +9,11 @@ public class HardMode extends Mode {
 		super(player1, player2);
 	}
 
-	void addItemsToLookupTable(char turn, char opposingTurn) {
+	void addItemsToLookupTable() {
+		GameStatus gameStatus = new GameStatus();
+		char turn = gameStatus.turn() ? 'O': 'X';
+		char opposingTurn = gameStatus.turn() ? 'X': 'O';
+
 		lookupTable.put(String.valueOf(turn), 1);
 		lookupTable.put("tie", 0);
 		lookupTable.put(String.valueOf(opposingTurn), -1);
@@ -18,22 +22,21 @@ public class HardMode extends Mode {
 	@Override
 	void computerInput() {
 		GameStatus gameStatus = new GameStatus();
-		gameStatus.setTicTacToe(ticTacToeTable);
-		int bestScore = (int) Double.NEGATIVE_INFINITY;
+		addItemsToLookupTable();
 
-		char playerTurn = gameStatus.turn() ? 'X': 'O';
-		char opposingPlayerTurn = gameStatus.turn() ? 'O': 'X';
+		gameStatus.setTicTacToe(ticTacToeTable);
+		char turn = gameStatus.turn() ? 'X': 'O';
+		char opposingTurn = gameStatus.turn() ? 'O': 'X';
 
 		int xCoordinates = 0;
 		int yCoordinates = 0;
-		addItemsToLookupTable(playerTurn, opposingPlayerTurn);
-
+		int bestScore = (int) Double.NEGATIVE_INFINITY;
 		System.out.println("Making move level \"hard\"");
-		for (int i = 0; i < LENGTH; i++) {
-			for (int j = 0; j < LENGTH; j++) {
+		for (int i = 0; i < ticTacToeTable.length; i++) {
+			for (int j = 0; j < ticTacToeTable.length; j++) {
 				if (!isOccupied(ticTacToeTable, i, j)) {
-					ticTacToeTable[i][j] = playerTurn;
-					int score = optimalMove(ticTacToeTable, false, playerTurn, opposingPlayerTurn);
+					ticTacToeTable[i][j] = turn;
+					int score = minimax(ticTacToeTable, false, turn, opposingTurn);
 					if (score > bestScore) {
 						bestScore = score;
 						xCoordinates = i;
@@ -44,24 +47,25 @@ public class HardMode extends Mode {
 			}
 		}
 
-		ticTacToeTable[xCoordinates][yCoordinates] = playerTurn;
+		ticTacToeTable[xCoordinates][yCoordinates] = turn;
 		printTable(ticTacToeTable);
 	}
 
-	int optimalMove(char[][] ticTacToe, boolean isMaximising, char playerTurn, char opposingPlayerTurn) {
+	int minimax(char[][] ticTacToe, boolean isMaximising, char turn, char opposingTurn) {
 		String result = checkWinner();
 		if (result != null) {
 			return lookupTable.get(result);
 		}
 
 		int bestScore;
+		int length = ticTacToe.length;
 		if (isMaximising) {
 			bestScore = (int) Double.NEGATIVE_INFINITY;
-			for (int i = 0; i < LENGTH; i++) {
-				for (int j = 0; j < LENGTH; j++) {
+			for (int i = 0; i < length; i++) {
+				for (int j = 0; j < length; j++) {
 					if (!isOccupied(ticTacToe, i, j)) {
-						ticTacToe[i][j] = playerTurn;
-						int score = optimalMove(ticTacToe, false, playerTurn, opposingPlayerTurn);
+						ticTacToe[i][j] = turn;
+						int score = minimax(ticTacToe, false, turn, opposingTurn);
 						ticTacToe[i][j] = ' ';
 						bestScore = Math.max(bestScore, score);
 					}
@@ -70,11 +74,11 @@ public class HardMode extends Mode {
 			return bestScore;
 		} else {
 			bestScore = (int) Double.POSITIVE_INFINITY;
-			for (int i = 0; i < LENGTH; i++) {
-				for (int j = 0; j < LENGTH; j++) {
+			for (int i = 0; i < length; i++) {
+				for (int j = 0; j < length; j++) {
 					if (!isOccupied(ticTacToe, i, j)) {
-						ticTacToe[i][j] = opposingPlayerTurn;
-						int score = optimalMove(ticTacToe, true, playerTurn, opposingPlayerTurn);
+						ticTacToe[i][j] = opposingTurn;
+						int score = minimax(ticTacToe, true, turn, opposingTurn);
 						ticTacToe[i][j] = ' ';
 						bestScore = Math.min(bestScore, score);
 					}

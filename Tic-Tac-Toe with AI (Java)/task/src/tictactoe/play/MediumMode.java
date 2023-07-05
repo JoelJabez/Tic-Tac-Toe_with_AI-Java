@@ -30,7 +30,7 @@ public class MediumMode extends Mode {
 	}
 
 	private boolean isAttackOrDefend(char turn, int[] coordinates) {
-		for (int i = 0; i < LENGTH; i++) {
+		for (int i = 0; i < ticTacToeTable.length; i++) {
 			if (checkHorizontalAndVertical(turn, coordinates, i)) {
 				return true;
 			}
@@ -57,7 +57,7 @@ public class MediumMode extends Mode {
 		int oCounter = 0;
 		int xCounter = 0;
 
-		for (int j = 0; j < LENGTH; j++) {
+		for (int j = 0; j < ticTacToeTable.length; j++) {
 			int[] counter = coordinateToPlace(i, j, xCounter, oCounter, coordinates);
 			xCounter = counter[0];
 			oCounter = counter[1];
@@ -69,7 +69,7 @@ public class MediumMode extends Mode {
 	private boolean isVertical(int[] coordinates, int i, char turn) {
 		int xCounter = 0;
 		int oCounter = 0;
-		for (int j = 0; j < LENGTH; j++) {
+		for (int j = 0; j < ticTacToeTable.length; j++) {
 			int[] counter = coordinateToPlace(j, i, xCounter, oCounter, coordinates);
 			xCounter = counter[0];
 			oCounter = counter[1];
@@ -81,7 +81,7 @@ public class MediumMode extends Mode {
 	private boolean isLeftDiagonal(int[] coordinates, char turn) {
 		int xCounter = 0;
 		int oCounter = 0;
-		for (int i = 0; i < LENGTH; i++) {
+		for (int i = 0; i < ticTacToeTable.length; i++) {
 			int[] counter = coordinateToPlace(i, i, xCounter, oCounter, coordinates);
 			xCounter = counter[0];
 			oCounter = counter[1];
@@ -93,9 +93,9 @@ public class MediumMode extends Mode {
 	private boolean isRightDiagonal(int[] coordinates, char turn) {
 		int xCounter = 0;
 		int oCounter = 0;
-		int j = LENGTH - 1;
+		int j = ticTacToeTable.length - 1;
 
-		for (int i = 0; i < LENGTH; i++, j--) {
+		for (int i = 0; i < ticTacToeTable.length; i++, j--) {
 			int[] counter = coordinateToPlace(i, j, xCounter, oCounter, coordinates);
 			xCounter = counter[0];
 			oCounter = counter[1];

@@ -42,8 +42,6 @@ public class TicTacToe {
 									levelOfDifficulty = new Mode(mode, against);
 									levelOfDifficulty.battleAgainst();
 								}
-
-								default -> System.out.println("Bad parameters");
 							}
 						}
 
@@ -53,8 +51,6 @@ public class TicTacToe {
 									if (against.equals("user")) {
 										levelOfDifficulty = new EasyMode("computer", "user");
 										levelOfDifficulty.battleAgainst();
-									} else {
-										System.out.println("Bad parameters");
 									}
 								}
 
@@ -62,8 +58,6 @@ public class TicTacToe {
 									if (against.equals("user")) {
 										levelOfDifficulty = new MediumMode("computer", "user");
 										levelOfDifficulty.battleAgainst();
-									} else {
-										System.out.println("Bad parameters");
 									}
 								}
 
@@ -71,8 +65,6 @@ public class TicTacToe {
 									if (against.equals("user")) {
 										levelOfDifficulty = new HardMode("computer", "user");
 										levelOfDifficulty.battleAgainst();
-									} else {
-										System.out.println("Bad parameters");
 									}
 								}
 
@@ -92,8 +84,6 @@ public class TicTacToe {
 											levelOfDifficulty = new HardMode("user", "computer");
 											levelOfDifficulty.battleAgainst();
 										}
-
-										default -> System.out.println("Bad parameters");
 									}
 								}
 							}

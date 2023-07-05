@@ -559,9 +559,63 @@ files:
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7438#comment
-status: Solved
+status: Failed
 feedback:
-  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
-    to continue learning.
-  time: "Wed, 05 Jul 2023 07:11:59 UTC"
+  message: |-
+    Wrong answer in test #183
+
+    The result of the game between minimax algorithms should be always &#39;Draw&#39;!
+    Make sure your output contains &#39;Draw&#39;.
+
+    Please find below the output of your program during this failed test.
+    Note that the &#39;&gt;&#39; character indicates the beginning of the input line.
+
+    ---
+
+    Input command: &gt; start hard hard
+    ---------
+    |       |
+    |       |
+    |       |
+    ---------
+    Making move level &quot;hard&quot;
+    ---------
+    |       |
+    |   X   |
+    |       |
+    ---------
+    Making move level &quot;hard&quot;
+    ---------
+    | O     |
+    |   X   |
+    |       |
+    ---------
+    Making move level &quot;hard&quot;
+    ---------
+    | O     |
+    |   X X |
+    |       |
+    ---------
+    Making move level &quot;hard&quot;
+    ---------
+    | O     |
+    | O X X |
+    |       |
+    ---------
+    Making move level &quot;hard&quot;
+    ---------
+    | O X   |
+    | O X X |
+    |       |
+    ---------
+    Making move level &quot;hard&quot;
+    ---------
+    | O X   |
+    | O X X |
+    | O     |
+    ---------
+    O wins
+
+    Input command:
+  time: "Wed, 05 Jul 2023 03:08:41 UTC"
 record: 1
