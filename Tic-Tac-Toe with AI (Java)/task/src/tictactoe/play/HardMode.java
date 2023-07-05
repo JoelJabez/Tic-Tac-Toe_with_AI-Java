@@ -3,8 +3,9 @@ package tictactoe.play;
 import java.util.HashMap;
 
 public class HardMode extends Mode {
-
+	final int NUMBER = 2;
 	HashMap<String, Integer> lookupTable = new HashMap<>();
+
 	HardMode(String player1, String player2) {
 		super(player1, player2);
 	}
@@ -19,11 +20,11 @@ public class HardMode extends Mode {
 	void computerInput() {
 		GameStatus gameStatus = new GameStatus();
 		gameStatus.setTicTacToe(ticTacToeTable);
-		int bestScore = (int) Double.NEGATIVE_INFINITY;
 
 		char playerTurn = gameStatus.turn() ? 'X': 'O';
 		char opposingPlayerTurn = gameStatus.turn() ? 'O': 'X';
 
+		int bestScore = NUMBER * -1;
 		int xCoordinates = 0;
 		int yCoordinates = 0;
 		addItemsToLookupTable(playerTurn, opposingPlayerTurn);
@@ -56,7 +57,7 @@ public class HardMode extends Mode {
 
 		int bestScore;
 		if (isMaximising) {
-			bestScore = (int) Double.NEGATIVE_INFINITY;
+			bestScore = NUMBER * -1;
 			for (int i = 0; i < LENGTH; i++) {
 				for (int j = 0; j < LENGTH; j++) {
 					if (!isOccupied(ticTacToe, i, j)) {
@@ -69,7 +70,7 @@ public class HardMode extends Mode {
 			}
 			return bestScore;
 		} else {
-			bestScore = (int) Double.POSITIVE_INFINITY;
+			bestScore = NUMBER;
 			for (int i = 0; i < LENGTH; i++) {
 				for (int j = 0; j < LENGTH; j++) {
 					if (!isOccupied(ticTacToe, i, j)) {
