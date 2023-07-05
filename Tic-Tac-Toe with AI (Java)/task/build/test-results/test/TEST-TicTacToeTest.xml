@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TicTacToeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-05T07:11:57" hostname="0134" time="1.517">
+<testsuite name="TicTacToeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-05T08:02:12" hostname="0134" time="1.683">
   <properties/>
-  <testcase name="start" classname="TicTacToeTest" time="1.517"/>
+  <testcase name="start" classname="TicTacToeTest" time="1.683"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 Input command: > start
@@ -26,52 +26,29 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X   |
-|     O |
+|   X O |
+|       |
 ---------
 Enter the coordinates: > 1 1
 ---------
 | X     |
-|   X   |
-|     O |
+|   X O |
+|       |
 ---------
 Making move level "easy"
 ---------
-| X   O |
-|   X   |
-|     O |
+| X     |
+|   X O |
+| O     |
 ---------
-Enter the coordinates: > 2 3
+Enter the coordinates: > 3 3
 ---------
-| X   O |
-|   X X |
-|     O |
+| X     |
+|   X O |
+| O   X |
 ---------
-Making move level "easy"
----------
-| X   O |
-| O X X |
-|     O |
----------
-Enter the coordinates: > 1 2
----------
-| X X O |
-| O X X |
-|     O |
----------
-Making move level "easy"
----------
-| X X O |
-| O X X |
-|   O O |
----------
-Enter the coordinates: > 3 1
----------
-| X X O |
-| O X X |
-| X O O |
----------
-Draw
+X wins
+
 ?[1;31m
 Start test 3?[0m
 Input command: > start user easy
@@ -88,9 +65,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
+| O     |
 |   X   |
-|     O |
+|       |
 ---------
 ?[1;31m
 Start test 4?[0m
@@ -108,9 +85,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|     O |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 5?[0m
@@ -128,8 +105,8 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
-|   X O |
+|     O |
+|   X   |
 |       |
 ---------
 ?[1;31m
@@ -149,7 +126,7 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X O |
+| O X   |
 |       |
 ---------
 ?[1;31m
@@ -169,8 +146,8 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X   |
-| O     |
+|   X O |
+|       |
 ---------
 ?[1;31m
 Start test 8?[0m
@@ -190,7 +167,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-| O     |
+|     O |
 ---------
 ?[1;31m
 Start test 9?[0m
@@ -248,8 +225,8 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
-| O X   |
+| O     |
+|   X   |
 |       |
 ---------
 ?[1;31m
@@ -288,9 +265,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
-|   X   |
 | O     |
+|   X   |
+|       |
 ---------
 ?[1;31m
 Start test 14?[0m
@@ -309,8 +286,8 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X O |
-|       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 15?[0m
@@ -330,7 +307,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-|   O   |
+| O     |
 ---------
 ?[1;31m
 Start test 16?[0m
@@ -348,9 +325,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|     O |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 17?[0m
@@ -368,7 +345,7 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
+|     O |
 |   X   |
 |       |
 ---------
@@ -389,8 +366,8 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X   |
-| O     |
+| O X   |
+|       |
 ---------
 ?[1;31m
 Start test 19?[0m
@@ -408,9 +385,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 20?[0m
@@ -428,7 +405,7 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
+|     O |
 |   X   |
 |       |
 ---------
@@ -449,7 +426,7 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X O |
+| O X   |
 |       |
 ---------
 ?[1;31m
@@ -468,8 +445,8 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
-|   X   |
+|       |
+| O X   |
 |       |
 ---------
 ?[1;31m
@@ -490,7 +467,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-|   O   |
+|     O |
 ---------
 ?[1;31m
 Start test 24?[0m
@@ -509,7 +486,7 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-| O X   |
+|   X O |
 |       |
 ---------
 ?[1;31m
@@ -548,9 +525,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 27?[0m
@@ -568,9 +545,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 28?[0m
@@ -608,7 +585,7 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
+|     O |
 |   X   |
 |       |
 ---------
@@ -628,9 +605,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
-|   X   |
 |     O |
+|   X   |
+|       |
 ---------
 ?[1;31m
 Start test 31?[0m
@@ -649,11 +626,31 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-| O X   |
-|       |
+|   X   |
+|   O   |
 ---------
 ?[1;31m
 Start test 32?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X   |
+| O     |
+---------
+?[1;31m
+Start test 33?[0m
 Input command: > start user easy
 ---------
 |       |
@@ -673,26 +670,6 @@ Making move level "easy"
 |       |
 ---------
 ?[1;31m
-Start test 33?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|       |
-|   X O |
-|       |
----------
-?[1;31m
 Start test 34?[0m
 Input command: > start user easy
 ---------
@@ -708,9 +685,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 35?[0m
@@ -768,9 +745,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
-|   X   |
 | O     |
+|   X   |
+|       |
 ---------
 ?[1;31m
 Start test 38?[0m
@@ -788,12 +765,32 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
-|   X   |
+|       |
+| O X   |
 |       |
 ---------
 ?[1;31m
 Start test 39?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X   |
+|   O   |
+---------
+?[1;31m
+Start test 40?[0m
 Input command: > start user easy
 ---------
 |       |
@@ -813,26 +810,6 @@ Making move level "easy"
 |       |
 ---------
 ?[1;31m
-Start test 40?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|       |
-|   X   |
-|     O |
----------
-?[1;31m
 Start test 41?[0m
 Input command: > start user easy
 ---------
@@ -848,9 +825,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|     O |
-|   X   |
 |       |
+|   X   |
+|   O   |
 ---------
 ?[1;31m
 Start test 42?[0m
@@ -870,7 +847,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-| O     |
+|   O   |
 ---------
 ?[1;31m
 Start test 43?[0m
@@ -888,9 +865,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
+| O     |
 |   X   |
-|     O |
+|       |
 ---------
 ?[1;31m
 Start test 44?[0m
@@ -910,7 +887,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-|   O   |
+| O     |
 ---------
 ?[1;31m
 Start test 45?[0m
@@ -928,9 +905,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 46?[0m
@@ -949,8 +926,8 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X O |
-|       |
+|   X   |
+|     O |
 ---------
 ?[1;31m
 Start test 47?[0m
@@ -970,210 +947,10 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-|     O |
+| O     |
 ---------
 ?[1;31m
 Start test 48?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|       |
-|   X   |
-|   O   |
----------
-?[1;31m
-Start test 49?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|     O |
-|   X   |
-|       |
----------
-?[1;31m
-Start test 50?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|     O |
-|   X   |
-|       |
----------
-?[1;31m
-Start test 51?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|       |
-| O X   |
-|       |
----------
-?[1;31m
-Start test 52?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|     O |
-|   X   |
-|       |
----------
-?[1;31m
-Start test 53?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|     O |
-|   X   |
-|       |
----------
-?[1;31m
-Start test 54?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|       |
-|   X   |
-|     O |
----------
-?[1;31m
-Start test 55?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|       |
-|   X O |
-|       |
----------
-?[1;31m
-Start test 56?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|       |
-| O X   |
-|       |
----------
-?[1;31m
-Start test 57?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|       |
-|   X   |
-|     O |
----------
-?[1;31m
-Start test 58?[0m
 Input command: > start user easy
 ---------
 |       |
@@ -1193,7 +970,87 @@ Making move level "easy"
 |       |
 ---------
 ?[1;31m
-Start test 59?[0m
+Start test 49?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X   |
+| O     |
+---------
+?[1;31m
+Start test 50?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X   |
+|     O |
+---------
+?[1;31m
+Start test 51?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|   O   |
+|   X   |
+|       |
+---------
+?[1;31m
+Start test 52?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X O |
+|       |
+---------
+?[1;31m
+Start test 53?[0m
 Input command: > start user easy
 ---------
 |       |
@@ -1213,7 +1070,27 @@ Making move level "easy"
 |       |
 ---------
 ?[1;31m
-Start test 60?[0m
+Start test 54?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X O |
+|       |
+---------
+?[1;31m
+Start test 55?[0m
 Input command: > start user easy
 ---------
 |       |
@@ -1233,6 +1110,106 @@ Making move level "easy"
 |       |
 ---------
 ?[1;31m
+Start test 56?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X O |
+|       |
+---------
+?[1;31m
+Start test 57?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+| O X   |
+|       |
+---------
+?[1;31m
+Start test 58?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X   |
+| O     |
+---------
+?[1;31m
+Start test 59?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X   |
+| O     |
+---------
+?[1;31m
+Start test 60?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X   |
+|   O   |
+---------
+?[1;31m
 Start test 61?[0m
 Input command: > start user easy
 ---------
@@ -1248,8 +1225,8 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
-|   X   |
+|       |
+|   X O |
 |       |
 ---------
 ?[1;31m
@@ -1308,7 +1285,7 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
+|     O |
 |   X   |
 |       |
 ---------
@@ -1330,7 +1307,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-| O     |
+|     O |
 ---------
 ?[1;31m
 Start test 66?[0m
@@ -1348,9 +1325,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
+|   O   |
 |   X   |
-|     O |
+|       |
 ---------
 ?[1;31m
 Start test 67?[0m
@@ -1368,9 +1345,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
-|   X   |
 |       |
+|   X   |
+|   O   |
 ---------
 ?[1;31m
 Start test 68?[0m
@@ -1408,9 +1385,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|     O |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 70?[0m
@@ -1428,7 +1405,7 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
+|   O   |
 |   X   |
 |       |
 ---------
@@ -1448,9 +1425,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
-|   X   |
 |   O   |
+|   X   |
+|       |
 ---------
 ?[1;31m
 Start test 72?[0m
@@ -1508,9 +1485,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
+| O     |
 |   X   |
-|   O   |
+|       |
 ---------
 ?[1;31m
 Start test 75?[0m
@@ -1528,8 +1505,8 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
-| O X   |
+|   O   |
+|   X   |
 |       |
 ---------
 ?[1;31m
@@ -1548,9 +1525,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|     O |
-|   X   |
 |       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 77?[0m
@@ -1568,7 +1545,7 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
+|     O |
 |   X   |
 |       |
 ---------
@@ -1588,12 +1565,72 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
+|     O |
+|   X   |
+|       |
+---------
+?[1;31m
+Start test 79?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+| O X   |
+|       |
+---------
+?[1;31m
+Start test 80?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
 |       |
 |   X   |
 |     O |
 ---------
 ?[1;31m
-Start test 79?[0m
+Start test 81?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+|       |
+|   X   |
+|     O |
+---------
+?[1;31m
+Start test 82?[0m
 Input command: > start user easy
 ---------
 |       |
@@ -1613,66 +1650,6 @@ Making move level "easy"
 |       |
 ---------
 ?[1;31m
-Start test 80?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|   O   |
-|   X   |
-|       |
----------
-?[1;31m
-Start test 81?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|   O   |
-|   X   |
-|       |
----------
-?[1;31m
-Start test 82?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|   O   |
-|   X   |
-|       |
----------
-?[1;31m
 Start test 83?[0m
 Input command: > start user easy
 ---------
@@ -1688,7 +1665,7 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|     O |
+|   O   |
 |   X   |
 |       |
 ---------
@@ -1708,9 +1685,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
+|   O   |
 |   X   |
-|     O |
+|       |
 ---------
 ?[1;31m
 Start test 85?[0m
@@ -1728,9 +1705,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
-|   X   |
 |       |
+|   X   |
+|   O   |
 ---------
 ?[1;31m
 Start test 86?[0m
@@ -1748,8 +1725,8 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|   O   |
-|   X   |
+|       |
+|   X O |
 |       |
 ---------
 ?[1;31m
@@ -1769,8 +1746,8 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X O |
-|       |
+|   X   |
+| O     |
 ---------
 ?[1;31m
 Start test 88?[0m
@@ -1810,7 +1787,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-|   O   |
+| O     |
 ---------
 ?[1;31m
 Start test 90?[0m
@@ -1829,31 +1806,11 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X   |
-| O     |
+| O X   |
+|       |
 ---------
 ?[1;31m
 Start test 91?[0m
-Input command: > start user easy
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "easy"
----------
-|   O   |
-|   X   |
-|       |
----------
-?[1;31m
-Start test 92?[0m
 Input command: > start user easy
 ---------
 |       |
@@ -1873,6 +1830,26 @@ Making move level "easy"
 |       |
 ---------
 ?[1;31m
+Start test 92?[0m
+Input command: > start user easy
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "easy"
+---------
+| O     |
+|   X   |
+|       |
+---------
+?[1;31m
 Start test 93?[0m
 Input command: > start user easy
 ---------
@@ -1888,9 +1865,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
+| O     |
 |   X   |
-|   O   |
+|       |
 ---------
 ?[1;31m
 Start test 94?[0m
@@ -1928,9 +1905,9 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
+| O     |
 |   X   |
-|     O |
+|       |
 ---------
 ?[1;31m
 Start test 96?[0m
@@ -1968,8 +1945,8 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-|       |
-| O X   |
+| O     |
+|   X   |
 |       |
 ---------
 ?[1;31m
@@ -1989,8 +1966,8 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X   |
-|   O   |
+| O X   |
+|       |
 ---------
 ?[1;31m
 Start test 99?[0m
@@ -2010,7 +1987,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-|   O   |
+|     O |
 ---------
 ?[1;31m
 Start test 100?[0m
@@ -2030,7 +2007,7 @@ Making move level "easy"
 ---------
 |       |
 |   X   |
-|     O |
+|   O   |
 ---------
 ?[1;31m
 Start test 101?[0m
@@ -2048,7 +2025,7 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "easy"
 ---------
-| O     |
+|   O   |
 |   X   |
 |       |
 ---------
@@ -2069,8 +2046,8 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X   |
-|     O |
+| O X   |
+|       |
 ---------
 ?[1;31m
 Start test 103?[0m
@@ -2091,20 +2068,20 @@ Enter the coordinates: > 2 2
 Making move level "easy"
 ---------
 |       |
-|   X   |
-|     O |
+| O X   |
+|       |
 ---------
-Enter the coordinates: > 1 3
+Enter the coordinates: > 1 1
 ---------
-|     X |
-|   X   |
-|     O |
+| X     |
+| O X   |
+|       |
 ---------
 Making move level "easy"
 ---------
-|     X |
-|   X O |
-|     O |
+| X   O |
+| O X   |
+|       |
 ---------
 ?[1;31m
 Start test 105?[0m
@@ -2182,33 +2159,45 @@ Making move level "easy"
 ---------
 Making move level "easy"
 ---------
-|   X   |
-| O     |
+|   X O |
+|       |
 |       |
 ---------
 Making move level "easy"
 ---------
+|   X O |
 |   X   |
-| O     |
-|     X |
+|       |
 ---------
 Making move level "easy"
 ---------
-| O X   |
-| O     |
-|     X |
+|   X O |
+|   X O |
+|       |
 ---------
 Making move level "easy"
 ---------
-| O X   |
-| O   X |
-|     X |
+|   X O |
+| X X O |
+|       |
 ---------
 Making move level "easy"
 ---------
-| O X   |
-| O   X |
-| O   X |
+|   X O |
+| X X O |
+|   O   |
+---------
+Making move level "easy"
+---------
+|   X O |
+| X X O |
+| X O   |
+---------
+Making move level "easy"
+---------
+|   X O |
+| X X O |
+| X O O |
 ---------
 O wins
 
@@ -2260,24 +2249,120 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "medium"
 ---------
-|   O   |
-|   X   |
 |       |
+|   X   |
+|   O   |
 ---------
 Enter the coordinates: > 1 1
 ---------
-| X O   |
+| X     |
+|   X   |
+|   O   |
+---------
+Making move level "medium"
+---------
+| X     |
+|   X   |
+|   O O |
+---------
+?[1;31m
+Start test 138?[0m
+Input command: > start user medium
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
 |   X   |
 |       |
 ---------
 Making move level "medium"
 ---------
-| X O   |
+| O     |
+|   X   |
+|       |
+---------
+Enter the coordinates: > 1 3
+---------
+| O   X |
+|   X   |
+|       |
+---------
+Making move level "medium"
+---------
+| O   X |
+|   X   |
+| O     |
+---------
+?[1;31m
+Start test 139?[0m
+Input command: > start user medium
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "medium"
+---------
+|       |
+| O X   |
+|       |
+---------
+Enter the coordinates: > 1 1
+---------
+| X     |
+| O X   |
+|       |
+---------
+Making move level "medium"
+---------
+| X     |
+| O X   |
+|     O |
+---------
+?[1;31m
+Start test 140?[0m
+Input command: > start user medium
+---------
+|       |
+|       |
+|       |
+---------
+Enter the coordinates: > 2 2
+---------
+|       |
+|   X   |
+|       |
+---------
+Making move level "medium"
+---------
+|     O |
+|   X   |
+|       |
+---------
+Enter the coordinates: > 1 1
+---------
+| X   O |
+|   X   |
+|       |
+---------
+Making move level "medium"
+---------
+| X   O |
 |   X   |
 |     O |
 ---------
 ?[1;31m
-Start test 138?[0m
+Start test 141?[0m
 Input command: > start user medium
 ---------
 |       |
@@ -2309,102 +2394,6 @@ Making move level "medium"
 | O   O |
 ---------
 ?[1;31m
-Start test 139?[0m
-Input command: > start user medium
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "medium"
----------
-|     O |
-|   X   |
-|       |
----------
-Enter the coordinates: > 1 1
----------
-| X   O |
-|   X   |
-|       |
----------
-Making move level "medium"
----------
-| X   O |
-|   X   |
-|     O |
----------
-?[1;31m
-Start test 140?[0m
-Input command: > start user medium
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "medium"
----------
-| O     |
-|   X   |
-|       |
----------
-Enter the coordinates: > 1 3
----------
-| O   X |
-|   X   |
-|       |
----------
-Making move level "medium"
----------
-| O   X |
-|   X   |
-| O     |
----------
-?[1;31m
-Start test 141?[0m
-Input command: > start user medium
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "medium"
----------
-|       |
-|   X O |
-|       |
----------
-Enter the coordinates: > 1 1
----------
-| X     |
-|   X O |
-|       |
----------
-Making move level "medium"
----------
-| X     |
-|   X O |
-|     O |
----------
-?[1;31m
 Start test 142?[0m
 Input command: > start user medium
 ---------
@@ -2420,21 +2409,21 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "medium"
 ---------
-| O     |
+|     O |
 |   X   |
 |       |
 ---------
-Enter the coordinates: > 1 3
+Enter the coordinates: > 1 1
 ---------
-| O   X |
+| X   O |
 |   X   |
 |       |
 ---------
 Making move level "medium"
 ---------
-| O   X |
+| X   O |
 |   X   |
-| O     |
+|     O |
 ---------
 ?[1;31m
 Start test 143?[0m
@@ -2453,20 +2442,20 @@ Enter the coordinates: > 2 2
 Making move level "medium"
 ---------
 |       |
-| O X   |
-|       |
+|   X   |
+| O     |
 ---------
 Enter the coordinates: > 1 1
 ---------
 | X     |
-| O X   |
-|       |
+|   X   |
+| O     |
 ---------
 Making move level "medium"
 ---------
 | X     |
-| O X   |
-|     O |
+|   X   |
+| O   O |
 ---------
 ?[1;31m
 Start test 144?[0m
@@ -2486,17 +2475,17 @@ Making move level "medium"
 ---------
 |       |
 |   X   |
-|     O |
+| O     |
 ---------
-Enter the coordinates: > 1 3
+Enter the coordinates: > 1 1
 ---------
-|     X |
+| X     |
 |   X   |
-|     O |
+| O     |
 ---------
 Making move level "medium"
 ---------
-|     X |
+| X     |
 |   X   |
 | O   O |
 ---------
@@ -2516,20 +2505,20 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "medium"
 ---------
-|       |
-| O X   |
+|   O   |
+|   X   |
 |       |
 ---------
 Enter the coordinates: > 1 1
 ---------
-| X     |
-| O X   |
+| X O   |
+|   X   |
 |       |
 ---------
 Making move level "medium"
 ---------
-| X     |
-| O X   |
+| X O   |
+|   X   |
 |     O |
 ---------
 ?[1;31m
@@ -2542,59 +2531,48 @@ Input command: > start medium medium
 ---------
 Making move level "medium"
 ---------
-| X     |
 |       |
+|   X   |
 |       |
 ---------
 Making move level "medium"
 ---------
-| X     |
+|       |
+|   X   |
+|   O   |
+---------
+Making move level "medium"
+---------
+|       |
+|   X   |
+|   O X |
+---------
+Making move level "medium"
+---------
 | O     |
-|       |
+|   X   |
+|   O X |
 ---------
 Making move level "medium"
 ---------
-| X     |
-| O X   |
-|       |
+| O   X |
+|   X   |
+|   O X |
 ---------
 Making move level "medium"
 ---------
-| X     |
-| O X   |
-|     O |
+| O   X |
+|   X O |
+|   O X |
 ---------
 Making move level "medium"
 ---------
-| X     |
-| O X X |
-|     O |
+| O   X |
+|   X O |
+| X O X |
 ---------
-Making move level "medium"
----------
-| X   O |
-| O X X |
-|     O |
----------
-Making move level "medium"
----------
-| X   O |
-| O X X |
-| X   O |
----------
-Making move level "medium"
----------
-| X   O |
-| O X X |
-| X O O |
----------
-Making move level "medium"
----------
-| X X O |
-| O X X |
-| X O O |
----------
-Draw
+X wins
+
 ?[1;31m
 Start test 147?[0m
 Input command: > start medium medium
@@ -2605,57 +2583,45 @@ Input command: > start medium medium
 ---------
 Making move level "medium"
 ---------
-|   X   |
 |       |
-|       |
----------
-Making move level "medium"
----------
-|   X   |
-| O     |
+|     X |
 |       |
 ---------
 Making move level "medium"
 ---------
-|   X   |
-| O   X |
+|   O   |
+|     X |
 |       |
 ---------
 Making move level "medium"
 ---------
-|   X   |
-| O   X |
-| O     |
+|   O   |
+|     X |
+| X     |
 ---------
 Making move level "medium"
 ---------
-| X X   |
-| O   X |
-| O     |
+|   O   |
+|     X |
+| X O   |
 ---------
 Making move level "medium"
 ---------
-| X X O |
-| O   X |
-| O     |
+|   O   |
+|   X X |
+| X O   |
 ---------
 Making move level "medium"
 ---------
-| X X O |
+|   O   |
 | O X X |
-| O     |
+| X O   |
 ---------
 Making move level "medium"
 ---------
-| X X O |
+|   O X |
 | O X X |
-| O O   |
----------
-Making move level "medium"
----------
-| X X O |
-| O X X |
-| O O X |
+| X O   |
 ---------
 X wins
 
@@ -2670,53 +2636,58 @@ Input command: > start medium medium
 Making move level "medium"
 ---------
 |       |
+|   X   |
+|       |
+---------
+Making move level "medium"
+---------
 |       |
 |   X   |
+|     O |
 ---------
 Making move level "medium"
 ---------
-|   O   |
-|       |
+|     X |
 |   X   |
+|     O |
 ---------
 Making move level "medium"
 ---------
-|   O   |
-|       |
-| X X   |
----------
-Making move level "medium"
----------
-|   O   |
-|       |
-| X X O |
----------
-Making move level "medium"
----------
-|   O   |
 |     X |
-| X X O |
+|   X   |
+| O   O |
 ---------
 Making move level "medium"
 ---------
-| O O   |
 |     X |
-| X X O |
+|   X   |
+| O X O |
 ---------
 Making move level "medium"
 ---------
-| O O X |
-|     X |
-| X X O |
----------
-Making move level "medium"
----------
-| O O X |
 |   O X |
-| X X O |
+|   X   |
+| O X O |
 ---------
-O wins
-
+Making move level "medium"
+---------
+| X O X |
+|   X   |
+| O X O |
+---------
+Making move level "medium"
+---------
+| X O X |
+|   X O |
+| O X O |
+---------
+Making move level "medium"
+---------
+| X O X |
+| X X O |
+| O X O |
+---------
+Draw
 ?[1;31m
 Start test 149?[0m
 Input command: > start medium medium
@@ -2729,46 +2700,57 @@ Making move level "medium"
 ---------
 |       |
 |       |
-| X     |
+|     X |
 ---------
 Making move level "medium"
 ---------
+|   O   |
 |       |
-| O     |
-| X     |
+|     X |
 ---------
 Making move level "medium"
 ---------
+| X O   |
 |       |
-| O X   |
-| X     |
+|     X |
 ---------
 Making move level "medium"
 ---------
-|     O |
-| O X   |
-| X     |
+| X O   |
+|   O   |
+|     X |
 ---------
 Making move level "medium"
 ---------
-|     O |
-| O X   |
-| X   X |
+| X O   |
+|   O   |
+|   X X |
 ---------
 Making move level "medium"
 ---------
-|     O |
-| O X   |
+| X O   |
+|   O   |
+| O X X |
+---------
+Making move level "medium"
+---------
 | X O X |
+|   O   |
+| O X X |
 ---------
 Making move level "medium"
 ---------
-| X   O |
-| O X   |
 | X O X |
+|   O O |
+| O X X |
 ---------
-X wins
-
+Making move level "medium"
+---------
+| X O X |
+| X O O |
+| O X X |
+---------
+Draw
 ?[1;31m
 Start test 150?[0m
 Input command: > start medium medium
@@ -2779,53 +2761,47 @@ Input command: > start medium medium
 ---------
 Making move level "medium"
 ---------
-|       |
-|       |
 |     X |
+|       |
+|       |
 ---------
 Making move level "medium"
 ---------
+|     X |
+|       |
 |   O   |
+---------
+Making move level "medium"
+---------
+|     X |
 |       |
-|     X |
----------
-Making move level "medium"
----------
-|   O   |
-|       |
-|   X X |
----------
-Making move level "medium"
----------
-|   O   |
-|       |
-| O X X |
----------
-Making move level "medium"
----------
-|   O   |
-|     X |
-| O X X |
----------
-Making move level "medium"
----------
-|   O O |
-|     X |
-| O X X |
----------
-Making move level "medium"
----------
-| X O O |
-|     X |
-| O X X |
----------
-Making move level "medium"
----------
-| X O O |
 |   O X |
-| O X X |
 ---------
-O wins
+Making move level "medium"
+---------
+|     X |
+|     O |
+|   O X |
+---------
+Making move level "medium"
+---------
+|     X |
+|   X O |
+|   O X |
+---------
+Making move level "medium"
+---------
+| O   X |
+|   X O |
+|   O X |
+---------
+Making move level "medium"
+---------
+| O   X |
+|   X O |
+| X O X |
+---------
+X wins
 
 ?[1;31m
 Start test 151?[0m
@@ -2843,30 +2819,12 @@ Enter the coordinates: > 2 2
 ---------
 Making move level "medium"
 ---------
-|     O |
-|   X   |
 |       |
+|   X   |
+|   O   |
 ---------
 ?[1;31m
 Start test 152?[0m
-Input command: > start user medium
----------
-|       |
-|       |
-|       |
----------
-Enter the coordinates: > 2 2
----------
-|       |
-|   X   |
-|       |
----------
-Making move level "medium"
----------
-|       |
-|   X O |
-|       |
----------
 ?[1;31m
 Start test 153?[0m
 ?[1;31m
